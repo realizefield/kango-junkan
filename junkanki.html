@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>看護師国試 循環器 江原予備校 v10</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=Noto+Sans+JP:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0f1a; --sf:#111827; --sf2:#1e2a3a; --sf3:#243040;
+  --ac:#3b82f6; --ac2:#ef4444; --ac3:#22c55e; --ac4:#a78bfa;
+  --ac5:#f59e0b; --ac6:#06b6d4;
+  --tx:#e2e8f0; --txd:#64748b; --txm:#94a3b8;
+  --bd:#1e2d3d; --bd2:#2d3f52;
+  --r:10px; --r2:6px;
+  --rankA:#22c55e; --rankB:#f59e0b; --rankC:#ef4444;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;overflow-x:hidden;}
+#topbar{background:linear-gradient(135deg,#0b0f1a 0%,#111827 100%);border-bottom:1px solid var(--bd);padding:0 20px;height:56px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:200;}
+.app-logo{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:900;background:linear-gradient(135deg,#ef4444,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;white-space:nowrap;}
+.app-sub{font-size:10px;color:var(--txd);font-family:'DM Mono',monospace;letter-spacing:1px;}
+.topbar-nav{display:flex;gap:2px;margin-left:auto;overflow-x:auto;}
+.tnav{padding:6px 12px;border-radius:6px;border:none;background:transparent;color:var(--txm);font-family:'Noto Sans JP',sans-serif;font-size:12px;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.tnav:hover{background:var(--sf2);color:var(--tx);}
+.tnav.on{background:var(--ac);color:#fff;font-weight:700;}
+.badge-count{display:inline-flex;align-items:center;justify-content:center;background:var(--ac2);color:#fff;border-radius:99px;font-size:10px;min-width:18px;height:18px;padding:0 4px;margin-left:4px;font-weight:700;}
+.page{display:none;min-height:calc(100vh - 56px);}
+.page.active{display:block;animation:fadeUp .25s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.container{max-width:1080px;margin:0 auto;padding:24px 20px;}
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:20px;margin-bottom:14px;}
+.card-title{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:700;color:var(--ac);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.page-header{padding:28px 0 20px;}
+.page-header h1{font-family:'Noto Serif JP',serif;font-size:26px;font-weight:900;background:linear-gradient(135deg,#ef4444,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.page-header p{font-size:13px;color:var(--txm);margin-top:6px;}
+.progress-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:24px;}
+.prog-card{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:16px;text-align:center;}
+.prog-num{font-family:'DM Mono',monospace;font-size:32px;font-weight:700;}
+.prog-label{font-size:11px;color:var(--txd);margin-top:4px;}
+.unit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;}
+.unit-card{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:16px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden;}
+.unit-card:hover{border-color:var(--ac);transform:translateY(-2px);box-shadow:0 8px 24px rgba(239,68,68,.15);}
+.unit-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;}
+.unit-card.rank-A::before{background:var(--rankA);}
+.unit-card.rank-B::before{background:var(--rankB);}
+.unit-card.rank-C::before{background:var(--rankC);}
+.unit-card.rank-none::before{background:var(--bd2);}
+.unit-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;}
+.unit-icon{font-size:22px;flex-shrink:0;}
+.unit-name{font-size:14px;font-weight:700;color:var(--tx);line-height:1.4;}
+.unit-desc{font-size:11px;color:var(--txd);margin-top:2px;}
+.unit-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.rank-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:99px;font-size:11px;font-weight:700;font-family:'DM Mono',monospace;}
+.rank-badge.A{background:rgba(34,197,94,.15);color:var(--rankA);border:1px solid rgba(34,197,94,.3);}
+.rank-badge.B{background:rgba(245,158,11,.15);color:var(--rankB);border:1px solid rgba(245,158,11,.3);}
+.rank-badge.C{background:rgba(239,68,68,.15);color:var(--rankC);border:1px solid rgba(239,68,68,.3);}
+.rank-badge.none{background:var(--sf2);color:var(--txd);border:1px solid var(--bd2);}
+.done-check{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--txd);}
+.done-check input[type=checkbox]{width:15px;height:15px;accent-color:var(--ac3);cursor:pointer;}
+.unit-progress-bar{height:3px;background:var(--bd2);border-radius:2px;overflow:hidden;margin-top:10px;}
+.unit-progress-fill{height:100%;background:linear-gradient(90deg,#ef4444,#f97316);border-radius:2px;transition:width .5s;}
+.rank-selector{display:flex;gap:4px;margin-left:auto;}
+.rank-btn{width:26px;height:26px;border-radius:50%;border:2px solid transparent;background:var(--sf2);font-size:11px;font-weight:700;cursor:pointer;transition:all .15s;font-family:'DM Mono',monospace;}
+.rank-btn.A:hover,.rank-btn.A.sel{background:rgba(34,197,94,.2);border-color:var(--rankA);color:var(--rankA);}
+.rank-btn.B:hover,.rank-btn.B.sel{background:rgba(245,158,11,.2);border-color:var(--rankB);color:var(--rankB);}
+.rank-btn.C:hover,.rank-btn.C.sel{background:rgba(239,68,68,.2);border-color:var(--rankC);color:var(--rankC);}
+.qprogbar{height:4px;background:var(--bd);border-radius:2px;margin-bottom:20px;overflow:hidden;}
+.qprogfill{height:100%;background:linear-gradient(90deg,#ef4444,#f97316);transition:width .4s;}
+.qcard{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:24px;margin-bottom:12px;}
+.qtext{font-size:14px;line-height:1.85;font-weight:500;margin-bottom:18px;color:var(--tx);}
+.qtext .qcat{display:inline-block;padding:2px 8px;border-radius:4px;background:rgba(239,68,68,.15);color:#ef4444;font-size:10px;font-family:'DM Mono',monospace;margin-bottom:10px;}
+.choice{width:100%;text-align:left;padding:13px 16px;border-radius:8px;border:1px solid var(--bd2);background:rgba(30,42,58,.6);color:var(--tx);font-family:'Noto Sans JP',sans-serif;font-size:13.5px;cursor:pointer;margin-bottom:8px;transition:all .15s;line-height:1.5;display:flex;align-items:flex-start;gap:10px;}
+.choice:hover:not(:disabled){border-color:#ef4444;background:var(--sf2);}
+.choice.correct{border-color:var(--ac3);background:rgba(34,197,94,.12);color:var(--ac3);}
+.choice.wrong{border-color:var(--ac2);background:rgba(239,68,68,.1);color:var(--ac2);}
+.choice:disabled{cursor:default;}
+.choice-num{width:22px;height:22px;border-radius:50%;background:var(--bd2);color:var(--txm);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'DM Mono',monospace;margin-top:1px;}
+.choice.correct .choice-num{background:var(--ac3);color:#fff;}
+.choice.wrong .choice-num{background:var(--ac2);color:#fff;}
+.expbox{background:var(--sf2);border-left:3px solid #ef4444;border-radius:0 8px 8px 0;padding:14px 16px;margin-top:10px;font-size:12.5px;line-height:1.75;display:none;}
+.expbox.show{display:block;animation:fadeUp .3s;}
+.expbox .exp-label{font-size:10px;color:#ef4444;font-family:'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+.btn{padding:9px 20px;border-radius:7px;border:none;font-family:'Noto Sans JP',sans-serif;font-size:13px;cursor:pointer;transition:all .2s;font-weight:700;}
+.btn-primary{background:#ef4444;color:#fff;} .btn-primary:hover{background:#dc2626;}
+.btn-secondary{background:var(--sf2);color:var(--tx);border:1px solid var(--bd2);}
+.btn-secondary:hover{border-color:var(--ac);color:var(--ac);}
+.btn-warn{background:rgba(239,68,68,.15);color:var(--ac2);border:1px solid rgba(239,68,68,.3);}
+.btn-review{background:rgba(245,158,11,.15);color:var(--ac5);border:1px solid rgba(245,158,11,.3);}
+.result-card{text-align:center;padding:40px 24px;}
+.result-score{font-family:'Noto Serif JP',serif;font-size:72px;font-weight:900;background:linear-gradient(135deg,#ef4444,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;}
+.result-msg{font-size:15px;color:var(--txm);margin:8px 0 24px;}
+.result-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0;}
+.stat-box{background:var(--sf2);border-radius:var(--r2);padding:14px;text-align:center;}
+.stat-n{font-family:'DM Mono',monospace;font-size:30px;font-weight:700;}
+.stat-l{font-size:10px;color:var(--txd);margin-top:2px;}
+.review-item{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:16px;margin-bottom:10px;display:flex;align-items:flex-start;gap:12px;}
+.review-item-body{flex:1;}
+.review-q{font-size:13px;color:var(--tx);line-height:1.6;margin-bottom:6px;}
+.review-tags{display:flex;gap:6px;flex-wrap:wrap;}
+.rtag{display:inline-block;padding:2px 7px;border-radius:4px;font-size:10px;font-family:'DM Mono',monospace;}
+.rtag-unit{background:rgba(239,68,68,.15);color:#ef4444;}
+.rtag-wrong{background:rgba(239,68,68,.15);color:var(--ac2);}
+.fc-area{max-width:560px;margin:0 auto;text-align:center;}
+.fc-wrap{perspective:1200px;height:220px;margin-bottom:16px;cursor:pointer;}
+.fc-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.4,0,.2,1);}
+.fc-wrap.flipped .fc-inner{transform:rotateY(180deg);}
+.fc-face{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:var(--r);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:22px;}
+.fc-front{background:linear-gradient(135deg,#2d1515,#1e1a36);border:1px solid rgba(239,68,68,.4);}
+.fc-back{background:linear-gradient(135deg,#14291e,#1a2320);border:1px solid rgba(34,197,94,.4);transform:rotateY(180deg);}
+.fc-lbl{font-size:9px;letter-spacing:2px;text-transform:uppercase;font-family:'DM Mono',monospace;margin-bottom:8px;}
+.fc-front .fc-lbl{color:#ef4444;} .fc-back .fc-lbl{color:var(--ac3);}
+.fc-main{font-size:16px;font-weight:700;font-family:'Noto Serif JP',serif;line-height:1.5;white-space:pre-line;}
+.fc-sub{font-size:11px;color:var(--txd);margin-top:5px;}
+.fc-hint{font-size:10px;color:var(--txd);margin-top:12px;font-family:'DM Mono',monospace;}
+.fc-nav{display:flex;gap:10px;justify-content:center;align-items:center;}
+.fc-counter{font-family:'DM Mono',monospace;font-size:12px;color:var(--txd);min-width:50px;}
+.toast{position:fixed;bottom:24px;right:24px;z-index:9999;background:var(--sf2);border:1px solid var(--bd2);border-radius:8px;padding:12px 18px;font-size:13px;color:var(--tx);box-shadow:0 8px 32px rgba(0,0,0,.4);transform:translateY(80px);opacity:0;transition:all .3s;pointer-events:none;}
+.toast.show{transform:translateY(0);opacity:1;}
+#confetti-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9998;display:none;}
+.legend-bar{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;font-size:12px;color:var(--txm);}
+.legend-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;}
+.stabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:20px;}
+.stab{padding:6px 14px;border-radius:6px;border:1px solid var(--bd);background:transparent;color:var(--txd);font-size:12px;cursor:pointer;transition:all .15s;white-space:nowrap;font-family:'Noto Sans JP',sans-serif;}
+.stab:hover{border-color:#ef4444;color:#ef4444;}
+.stab.sa{background:rgba(239,68,68,.15);border-color:#ef4444;color:#ef4444;font-weight:700;}
+.dt{width:100%;border-collapse:collapse;font-size:12.5px;}
+.dt th{background:var(--sf2);padding:8px 12px;text-align:left;font-size:10px;letter-spacing:1px;color:var(--txd);font-family:'DM Mono',monospace;border-bottom:1px solid var(--bd2);}
+.dt td{padding:8px 12px;border-bottom:1px solid var(--bd);vertical-align:top;line-height:1.6;}
+.dt tr:last-child td{border-bottom:none;}
+.dt tr:hover td{background:rgba(30,42,58,.5);}
+.nb{border-left:3px solid #ef4444;border-radius:0 7px 7px 0;padding:10px 14px;margin:8px 0;font-size:12.5px;line-height:1.7;background:rgba(239,68,68,.06);}
+.nb.w{border-color:#ef4444;background:rgba(239,68,68,.08);}
+@media(max-width:640px){.container{padding:14px 12px;}.unit-grid{grid-template-columns:1fr;}.topbar-nav .tnav-label{display:none;}#topbar{padding:0 12px;}.result-score{font-size:56px;}}
+
+/* ── 図ポップアップ ── */
+.fig-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:6px;border:1px solid rgba(239,68,68,.4);background:rgba(239,68,68,.08);color:#ef4444;font-size:11px;font-weight:700;cursor:pointer;transition:all .15s;font-family:'Noto Sans JP',sans-serif;margin-top:8px;}
+.fig-btn:hover{background:rgba(239,68,68,.18);border-color:#ef4444;}
+.fig-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:8000;align-items:center;justify-content:center;padding:16px;}
+.fig-modal.open{display:flex;animation:fadeUp .2s ease;}
+.fig-box{background:#fff;border-radius:14px;max-width:700px;width:100%;max-height:90vh;overflow-y:auto;padding:20px;}
+.fig-box-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid #e5e7eb;}
+.fig-box-title{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:900;color:#1f2937;}
+.fig-close-btn{width:30px;height:30px;border-radius:50%;border:1px solid #d1d5db;background:#f3f4f6;color:#6b7280;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;}
+.fig-close-btn:hover{background:#ef4444;color:#fff;border-color:#ef4444;}
+/* 解説図エリア */
+.exp-fig{margin-top:12px;border-top:1px solid var(--bd);padding-top:12px;}
+.exp-fig-title{font-size:10px;color:#ef4444;font-family:'DM Mono',monospace;letter-spacing:1px;margin-bottom:8px;}
+
+</style>
+</head>
+<body>
+<canvas id="confetti-canvas"></canvas>
+
+<div id="topbar">
+  <div>
+    <div class="app-logo">循環器　江原予備校</div>
+    <div class="app-sub">NURSING CARDIOLOGY</div>
+  </div>
+  <nav class="topbar-nav">
+    <button class="tnav on" onclick="nav('home')">🏠 <span class="tnav-label">単元一覧</span></button>
+    <button class="tnav" onclick="nav('study')">📖 <span class="tnav-label">テキスト</span></button>
+    <button class="tnav" onclick="nav('quiz')">✏️ <span class="tnav-label">演習</span></button>
+    <button class="tnav" onclick="nav('review')">🔁 復習 <span id="review-badge" class="badge-count" style="display:none"></span></button>
+    <button class="tnav" onclick="nav('flash')">🃏 <span class="tnav-label">カード</span></button>
+  </nav>
+</div>
+
+<!-- HOME -->
+<div class="page active" id="page-home">
+<div class="container">
+  <div class="page-header">
+    <h1>❤️ 循環器</h1>
+    <p>単元名をクリックすると要点テキストが表示されます。テキストを確認してから演習を始めましょう。</p>
+  </div>
+  <div class="legend-bar">
+    <span><span class="legend-dot" style="background:var(--rankA)"></span>A 確認済み・得意</span>
+    <span><span class="legend-dot" style="background:var(--rankB)"></span>B 再度チェック</span>
+    <span><span class="legend-dot" style="background:var(--rankC)"></span>C 苦手・難しい</span>
+    <span>□ 未完了 / ☑ 完了</span>
+  </div>
+  <div id="prog-summary" class="progress-summary"></div>
+  <div class="card" id="cover-table" style="margin-bottom:16px;"></div>
+  <div class="unit-grid" id="unit-grid"></div>
+</div>
+</div>
+
+<!-- UNIT DETAIL -->
+<div class="page" id="page-unitdetail">
+<div class="container" style="max-width:800px;">
+  <button class="back-btn" onclick="nav('home')" style="background:none;border:none;color:var(--ac);font-size:13px;cursor:pointer;margin-bottom:12px;display:inline-flex;align-items:center;gap:6px;">← 単元一覧に戻る</button>
+  <div id="ud-header"></div>
+  <div id="ud-text-body"></div>
+  <div style="position:sticky;bottom:16px;margin-top:24px;text-align:center;padding-bottom:8px;">
+    <button class="btn btn-primary" id="ud-start-btn" style="padding:14px 40px;font-size:15px;border-radius:10px;box-shadow:0 4px 20px rgba(239,68,68,.4);">
+      ✏️ この単元の演習を開始
+    </button>
+  </div>
+</div>
+</div>
+
+<!-- STUDY -->
+<div class="page" id="page-study">
+<div class="container">
+  <div class="page-header"><h1>📖 テキスト</h1><p>各単元の要点まとめです。単元タブを切り替えてください。</p></div>
+  <div class="stabs" id="study-stabs"></div>
+  <div id="study-content"></div>
+</div>
+</div>
+
+<!-- QUIZ -->
+<div class="page" id="page-quiz">
+<div class="container" style="max-width:720px;">
+  <div id="quiz-mode-select" class="card">
+    <div class="card-title">✏️ 演習モードを選択</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;">
+      <button class="btn btn-primary" onclick="startQuiz('all')" style="padding:16px;font-size:14px;">
+        🔀 全問題（ランダム）<br><span style="font-size:11px;font-weight:400;opacity:.8">全 <span id="total-q-count">102</span> 問からランダム出題</span>
+      </button>
+      <button class="btn btn-secondary" onclick="showUnitSelect()" style="padding:16px;font-size:14px;">
+        📚 単元を選んで演習<br><span style="font-size:11px;font-weight:400;opacity:.6">特定の単元に絞って練習</span>
+      </button>
+    </div>
+    <div id="unit-select-panel" style="display:none;margin-top:14px;">
+      <div style="font-size:12px;color:var(--txd);margin-bottom:8px;">単元を選択してください：</div>
+      <div id="unit-select-list" style="display:flex;flex-wrap:wrap;gap:6px;"></div>
+      <div style="margin-top:12px;">
+        <button class="btn btn-primary" onclick="startQuizSelected()" id="start-selected-btn" disabled>選択した単元で開始</button>
+      </div>
+    </div>
+  </div>
+  <div id="quiz-area" style="display:none;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+      <span id="q-unit-label" style="font-size:11px;color:var(--txd);font-family:'DM Mono',monospace;"></span>
+      <span id="q-num-label" style="font-size:11px;color:var(--txd);font-family:'DM Mono',monospace;"></span>
+    </div>
+    <div class="qprogbar"><div class="qprogfill" id="qprogfill"></div></div>
+    <div class="qcard">
+      <div class="qtext">
+        <div class="qcat" id="q-cat-tag"></div>
+        <div id="q-text"></div>
+      </div>
+      <div id="q-choices"></div>
+      <div class="expbox" id="q-exp">
+        <div class="exp-label">解説</div>
+        <div id="q-exp-text"></div>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <button class="btn btn-primary" id="q-next-btn" onclick="nextQuestion()" style="display:none;">次の問題 →</button>
+      <button class="btn btn-secondary" onclick="endQuiz()" style="font-size:12px;">演習を終了</button>
+    </div>
+  </div>
+  <div id="quiz-result" style="display:none;" class="card result-card">
+    <div style="font-size:11px;color:var(--txd);font-family:'DM Mono',monospace;margin-bottom:8px;">RESULT</div>
+    <div class="result-score" id="res-pct"></div>
+    <div class="result-msg" id="res-msg"></div>
+    <div class="result-stats">
+      <div class="stat-box"><div class="stat-n" id="res-ok" style="color:var(--ac3)"></div><div class="stat-l">正解</div></div>
+      <div class="stat-box"><div class="stat-n" id="res-ng" style="color:var(--ac2)"></div><div class="stat-l">不正解</div></div>
+      <div class="stat-box"><div class="stat-n" id="res-tot"></div><div class="stat-l">合計</div></div>
+    </div>
+    <div id="wrong-summary" style="margin:16px 0;text-align:left;"></div>
+    <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn btn-primary" onclick="startQuiz('all')">全問再挑戦</button>
+      <button class="btn btn-review" onclick="nav('review')">🔁 復習リストへ</button>
+      <button class="btn btn-secondary" onclick="showQuizMenu()">メニューへ</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- REVIEW -->
+<div class="page" id="page-review">
+<div class="container" style="max-width:720px;">
+  <div class="page-header">
+    <h1>🔁 復習リスト</h1>
+    <p>間違えた問題が自動的に登録されます。クリアするまで残り続けます。</p>
+  </div>
+  <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;">
+    <button class="btn btn-review" onclick="startReviewQuiz()">🔁 復習問題を解く</button>
+    <button class="btn btn-warn" onclick="clearAllReview()">復習リストをクリア</button>
+  </div>
+  <div id="review-list"></div>
+</div>
+</div>
+
+<!-- FLASH -->
+<div class="page" id="page-flash">
+<div class="container">
+  <div class="page-header"><h1>🃏 フラッシュカード</h1></div>
+  <div class="fc-area">
+    <div style="margin-bottom:12px;color:var(--txd);font-size:12px;">カードをクリック / タップしてめくる</div>
+    <div class="fc-wrap" id="fc-card" onclick="flipFC()">
+      <div class="fc-inner">
+        <div class="fc-face fc-front">
+          <div class="fc-lbl">KEYWORD</div>
+          <div class="fc-main" id="fc-front"></div>
+          <div class="fc-sub" id="fc-sub"></div>
+          <div class="fc-hint">↓ クリックして答えを確認</div>
+        </div>
+        <div class="fc-face fc-back">
+          <div class="fc-lbl">ANSWER</div>
+          <div class="fc-main" id="fc-back" style="font-size:12px;text-align:center;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="fc-nav">
+      <button class="btn btn-secondary" onclick="prevFC()" style="padding:7px 16px;">← 前へ</button>
+      <span class="fc-counter" id="fc-cnt"></span>
+      <button class="btn btn-secondary" onclick="nextFC()" style="padding:7px 16px;">次へ →</button>
+    </div>
+    <div style="margin-top:14px;text-align:center;">
+      <button class="btn btn-primary" onclick="shuffleFC()" style="font-size:12px;padding:7px 16px;">🔀 シャッフル</button>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- 図ポップアップモーダル -->
+<div class="fig-modal" id="fig-modal">
+  <div class="fig-box">
+    <div class="fig-box-header">
+      <div class="fig-box-title" id="fig-modal-title"></div>
+      <button class="fig-close-btn" onclick="closeFigModal()">×</button>
+    </div>
+    <div id="fig-modal-body"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ═══════════════ DATA ═══════════════
+const UNITS = [
+  {id:'u01',icon:'🫀',name:'心臓の構造と血液の流れ',desc:'体循環・肺循環・刺激伝導系・心音・血圧の決定要因'},
+  {id:'u02',icon:'💊',name:'高血圧の治療薬',desc:'Ca拮抗薬・ACE阻害薬・ARB・β遮断薬・利尿薬'},
+  {id:'u03',icon:'🚑',name:'心不全',desc:'左右心不全の症状・利尿薬・強心薬・浮腫観察・退院指導'},
+  {id:'u04',icon:'⚡',name:'不整脈',desc:'心房細動・心室細動・房室ブロック・AED・BLS'},
+  {id:'u05',icon:'💔',name:'狭心症・心筋梗塞',desc:'病態・ST変化・MONA・PCI・大動脈解離・リハビリ強度'},
+];
+
+const QUESTIONS = [
+  // ── u01 心臓の構造と血液の流れ ──
+  {id:'q101',unit:'u01',cat:'体循環・肺循環',
+   q:'体循環の正しい経路はどれか。',
+   c:['左心室 → 肺動脈 → 肺 → 肺静脈 → 左心房','左心室 → 大動脈 → 全身 → 大静脈 → 右心房','右心室 → 大動脈 → 全身 → 大静脈 → 左心房','右心室 → 肺動脈 → 肺 → 肺静脈 → 左心房'],a:1,
+   e:'体循環は「左心室→大動脈→全身の組織→上下大静脈→右心房」の経路。肺循環は「右心室→肺動脈→肺→肺静脈→左心房」。左心室からスタートが体循環、右心室からスタートが肺循環。'},
+  {id:'q102',unit:'u01',cat:'体循環・肺循環',
+   q:'肺静脈を流れる血液はどれか。',
+   c:['静脈血（CO₂を多く含む）','動脈血（O₂を多く含む）','どちらでもない','場合による'],a:1,
+   e:'肺静脈は肺（外呼吸）でO₂を受け取った動脈血を左心房へ運ぶ。逆に肺動脈は右心室からCO₂を多く含む静脈血を肺へ運ぶ。「肺動脈=静脈血、肺静脈=動脈血」が頻出ひっかけ。'},
+  {id:'q103',unit:'u01',cat:'体循環・肺循環',
+   q:'全身の毛細血管で行われるガス交換の名称はどれか。',
+   c:['外呼吸','内呼吸（組織呼吸）','換気','拡散'],a:1,
+   e:'内呼吸＝全身の毛細血管で血液が組織にO₂を渡しCO₂を受け取る。外呼吸＝肺胞でCO₂を渡しO₂を受け取る。「内・外」の区別が国試で問われる。'},
+  {id:'q104',unit:'u01',cat:'体循環・肺循環',
+   q:'心臓の4つの部屋で壁が最も厚いのはどれか。',
+   c:['右心房','右心室','左心房','左心室'],a:3,
+   e:'左心室は大動脈を通じて全身へ血液を送るため最も強い圧力が必要→壁が最も厚い。右心室より送る距離・抵抗が大きいため内圧も高い。心筋梗塞の影響が最大になるのも左心室。'},
+  {id:'q105',unit:'u01',cat:'体循環・肺循環',
+   q:'右心室と左心室で等しいのはどれか。',
+   c:['壁の厚さ','内圧（血圧）','1回拍出量','送り出す血管の太さ'],a:2,
+   e:'左右の心室は同じ心拍数・同じ1回拍出量で動く。壁の厚さと内圧は左＞右。左右の拍出量が等しいことで体循環・肺循環の血液量バランスが保たれる。'},
+  {id:'q106',unit:'u01',cat:'体循環・肺循環',
+   q:'上大静脈・下大静脈が直接つながっているのはどれか。',
+   c:['左心房','右心房','左心室','右心室'],a:1,
+   e:'体循環を終えた静脈血は上大静脈（上半身）・下大静脈（下半身）を通って右心房へ戻る。右心房→右心室→肺動脈→肺→肺静脈→左心房の流れが肺循環の始まり。'},
+  {id:'q107',unit:'u01',cat:'体循環・肺循環',
+   q:'心臓の刺激伝導系の正しい順序はどれか。',
+   c:['房室結節 → 洞房結節 → ヒス束 → プルキンエ線維','洞房結節 → 房室結節 → ヒス束 → プルキンエ線維','洞房結節 → ヒス束 → 房室結節 → プルキンエ線維','プルキンエ線維 → ヒス束 → 房室結節 → 洞房結節'],a:1,
+   e:'刺激伝導系：洞房結節（ペースメーカー）→房室結節→ヒス束→左右脚→プルキンエ線維→心室筋収縮。「洞→房→ヒス→プル」の順で覚える。洞房結節は右心房にある。'},
+  {id:'q108',unit:'u01',cat:'体循環・肺循環',
+   q:'正常な心拍数（安静時成人）はどれか。',
+   c:['20〜40回/分','60〜100回/分','110〜140回/分','150〜180回/分'],a:1,
+   e:'正常心拍数は60〜100回/分。60回/分未満=徐脈、100回/分超=頻脈。頻脈の原因：発熱・貧血・脱水・甲状腺機能亢進症・ショック代償反応など。'},
+
+  // ── u02 高血圧の治療薬 ──
+  {id:'q201',unit:'u02',cat:'高血圧の治療薬',
+   q:'ACE阻害薬の特徴的な副作用はどれか。',
+   c:['下肢浮腫','空咳（乾性咳嗽）10〜20%','高血糖・体重増加','黄色視'],a:1,
+   e:'ACE阻害薬（エナラプリル等）はブラジキニン蓄積により乾性咳嗽が10〜20%に出現。「ACEは咳」で覚える。咳が出たらARBへ変更を検討。'},
+  {id:'q202',unit:'u02',cat:'高血圧の治療薬',
+   q:'カルシウム拮抗薬と飲み合わせが危険な食品はどれか。',
+   c:['牛乳','納豆','グレープフルーツ','豆腐'],a:2,
+   e:'グレープフルーツのフラボノイドがCYP3A4を阻害し、Ca拮抗薬の血中濃度が著明に上昇→過剰降圧（ふらつき・血圧低下）。必ず避けるよう指導する。'},
+  {id:'q203',unit:'u02',cat:'高血圧の治療薬',
+   q:'ループ利尿薬（フロセミド）使用時に特に注意すべき電解質異常はどれか。',
+   c:['高カリウム血症','低カリウム血症','高カルシウム血症','高マグネシウム血症'],a:1,
+   e:'フロセミドはNa・水・Kを排泄するため低K血症が代表的副作用。K<3.0mEq/Lで不整脈リスク。ジゴキシン使用患者では中毒リスクも上昇する。'},
+  {id:'q204',unit:'u02',cat:'高血圧の治療薬',
+   q:'β遮断薬が禁忌となる疾患はどれか。',
+   c:['高血圧','気管支喘息','狭心症','頻脈性不整脈'],a:1,
+   e:'β遮断薬は気管支のβ₂受容体も遮断して気管支を収縮させるため、気管支喘息に禁忌。逆にβ₂刺激薬（β₂作動薬）は気管支を拡張させるため喘息発作治療に使用する。'},
+  {id:'q205',unit:'u02',cat:'高血圧の治療薬',
+   q:'レニン・アンジオテンシン・アルドステロン（RAA）系のカスケードとして正しいのはどれか。',
+   c:['アルドステロン → レニン → アンジオテンシンII','レニン → アンジオテンシンI → ACE → アンジオテンシンII → アルドステロン分泌','ACE → レニン → アンジオテンシンI → バソプレシン','アンジオテンシンII → レニン → アルドステロン'],a:1,
+   e:'RAA系：腎臓が血流低下を感知→レニン分泌→アンジオテンシノーゲンをアンジオテンシンIに変換→ACEによりアンジオテンシンIIへ変換→血管収縮＋アルドステロン分泌（Na・水再吸収）→血圧上昇。ACE阻害薬はIからIIへの変換を、ARBはIIの受容体を遮断する。'},
+
+  // ── u03 心不全 ──
+  {id:'q301',unit:'u03',cat:'心不全',
+   q:'左心不全に特徴的な症状はどれか。',
+   c:['下腿浮腫・頸静脈怒張・肝腫大','起座呼吸・ピンク色泡沫状痰・肺雑音','全身倦怠感・食欲不振のみ','チアノーゼ・冷感のみ'],a:1,
+   e:'左心不全では左心室が送り出せず肺にうっ血→呼吸困難・起座呼吸・ピンク色泡沫状痰（肺水腫）。右心不全では体静脈にうっ血→下腿浮腫・頸静脈怒張・肝腫大。「左=肺、右=体」で覚える。'},
+  {id:'q302',unit:'u03',cat:'心不全',
+   q:'心不全の重症度分類（NYHA分類）でⅣ度はどれか。',
+   c:['身体活動に制限なし','普通の活動で症状あり','安静時にも症状あり・最小限の活動で増悪','軽い活動で症状が出るが安静時は無症状'],a:2,
+   e:'NYHA分類：I度=制限なし、II度=軽労作で症状、III度=軽い日常動作で症状、IV度=安静時にも症状・最小限の活動で増悪。IV度が最重症。'},
+  {id:'q303',unit:'u03',cat:'心不全',
+   q:'心不全の検査として心臓への負荷が大きいほど上昇する血液マーカーはどれか。',
+   c:['CK（クレアチンキナーゼ）','トロポニンT','BNP（脳性ナトリウム利尿ペプチド）','PT-INR'],a:2,
+   e:'BNPとANPは心臓への負荷が増大すると分泌が増える利尿ペプチド。BNPが高いほど心不全の重症度が高い。CK・トロポニンTは心筋壊死（心筋梗塞）のマーカー。'},
+  {id:'q304',unit:'u03',cat:'心不全',
+   q:'胸部X線で心胸郭比（CTR）が何%を超えると心拡大と判断するか。',
+   c:['40%','50%','60%','70%'],a:1,
+   e:'心胸郭比（CTR）＝心臓幅÷胸郭幅×100。50%超で心拡大（心不全を疑う）。正常は成人で50%以下。心不全・心弁膜症・心筋症などで心拡大が起こる。'},
+  {id:'q305',unit:'u03',cat:'心不全',
+   q:'急性左心不全（肺水腫）の患者に最初に行うべき体位はどれか。',
+   c:['仰臥位（平らに寝かせる）','ファウラー位（座位・起座位）','トレンデレンブルグ体位（頭低下）','腹臥位'],a:1,
+   e:'急性左心不全では肺にうっ血→起座呼吸（座位が楽）。ファウラー位・起座位にすることで静脈還流量を減らし肺うっ血を軽減する。仰臥位では呼吸困難が増悪する。'},
+  {id:'q306',unit:'u03',cat:'心不全',
+   q:'慢性心不全患者への食事指導で正しいのはどれか。',
+   c:['塩分を多めに摂る','塩分は1日6g未満に制限する','水分は制限しなくてよい','高カロリー食を勧める'],a:1,
+   e:'心不全患者は塩分1日6g未満を基本とする。塩分→Na再吸収→水分貯留→循環血液量増加→心臓への負荷増大の悪循環を防ぐ。水分制限（1日1〜1.5L程度）・毎日体重測定も重要。'},
+  {id:'q307',unit:'u03',cat:'心不全',
+   q:'ジゴキシン（強心薬）の中毒症状として特徴的なのはどれか。',
+   c:['空咳・高K血症','黄色視・悪心・不整脈','下肢浮腫・頻脈','高血糖・体重増加'],a:1,
+   e:'ジゴキシン中毒の特徴的な視覚異常は「黄色視・緑色視」。悪心・嘔吐・不整脈も出現。TDM必須（有効域1.0〜2.0 ng/mL）。低K血症で中毒リスク↑→フロセミドとの併用に注意。'},
+  {id:'q308',unit:'u03',cat:'心不全',
+   q:'右心不全で起こる症状として正しいのはどれか。',
+   c:['肺水腫・起座呼吸・ピンク色泡沫状痰','下腿浮腫・頸静脈怒張・肝腫大・腹水','血圧の著明な上昇','発熱・白血球増加'],a:1,
+   e:'右心不全では右心室から先の体静脈がうっ血→下腿浮腫・頸静脈怒張・肝腫大・腹水・食欲不振。肺静脈うっ血は左心不全の症状。両心不全では両方の症状が出現する。'},
+  {id:'q309',unit:'u03',cat:'心不全',
+   q:'心不全患者の体重管理で、1〜2日で何kg増加したら医師に連絡するよう指導するか。',
+   c:['0.5kg以上','2kg以上','5kg以上','10kg以上'],a:1,
+   e:'心不全患者では体内への水分貯留（浮腫の悪化）を早期発見するため毎日朝起床後に体重測定を行う。1〜2日で2kg以上の急増は心不全悪化のサイン→医師に連絡。'},
+  {id:'q310',unit:'u03',cat:'心不全',
+   q:'心不全に使用するACE阻害薬・ARBの主な目的はどれか。',
+   c:['心拍数を増やして心拍出量を増加させる','心臓への負荷（前負荷・後負荷）を軽減して心臓を保護する','血糖値を下げる','感染を予防する'],a:1,
+   e:'ACE阻害薬・ARBはアンジオテンシンIIの作用を抑制→血管拡張（後負荷↓）＋Na・水排泄（前負荷↓）→心臓への負荷軽減・心臓リモデリングの抑制。心不全の予後改善効果が証明されている。'},
+
+  // ── u04 不整脈 ──
+  {id:'q401',unit:'u04',cat:'不整脈',
+   q:'心房細動の心電図で特徴的な所見はどれか。',
+   c:['ST上昇','P波の消失と基線の細かい揺れ（細動波）','PQ間隔の延長','異常Q波の出現'],a:1,
+   e:'心房細動ではP波が消失し、基線が細かく不規則に揺れる細動波が現れる。RR間隔もバラバラになる。「P波なし＋RR不整」が心房細動の心電図の2大特徴。'},
+  {id:'q402',unit:'u04',cat:'不整脈',
+   q:'心房細動が引き起こす最も重大な合併症はどれか。',
+   c:['心筋梗塞','脳塞栓症（脳梗塞）','腎不全','大動脈解離'],a:1,
+   e:'心房が収縮せず血流が淀む→特に左心房に血栓ができやすい→脳へ飛んで脳塞栓症（脳梗塞）。「心房細動＝血栓＝脳梗塞リスク」のセットで覚える。ワルファリン等の抗凝固療法が必要。'},
+  {id:'q403',unit:'u04',cat:'不整脈',
+   q:'心室細動が発生した際に最優先で行うべき処置はどれか。',
+   c:['輸液ラインの確保','酸素投与','AEDによる電気的除細動','抗不整脈薬の静脈内投与'],a:2,
+   e:'心室細動は心室が痙攣し心臓がポンプ機能を失った状態＝心停止。直ちにAEDで電気的除細動を行う。胸骨圧迫も並行して実施。「心室細動→AED最優先」を覚える。'},
+  {id:'q404',unit:'u04',cat:'不整脈',
+   q:'胸骨圧迫（心臓マッサージ）の正しい方法はどれか。',
+   c:['1分間60〜80回、深さ3cm程度','1分間100〜120回、深さ約5cm（6cmを超えない）','1分間140〜160回、深さ8cm程度','1分間80〜100回、深さ3〜4cm'],a:1,
+   e:'胸骨圧迫は1分間に100〜120回、深さ約5cm（6cmを超えない）。BLS（一次救命処置）の基本として国試頻出。圧迫のたびに胸が完全に戻ることも重要。'},
+  {id:'q405',unit:'u04',cat:'不整脈',
+   q:'AEDのパッドを正しく貼る位置はどれか。',
+   c:['両側の前胸部','右前胸部（鎖骨下）と左側胸部（脇の下）','両側の側胸部','前胸部と背部'],a:1,
+   e:'AEDのパッドは「右前胸部（鎖骨の下）」と「左側胸部（脇の下）」に貼る。心臓を挟むように貼ることで電気ショックが心臓全体に届く。パッドの位置は国試頻出。'},
+  {id:'q406',unit:'u04',cat:'不整脈',
+   q:'完全房室ブロックにより脳血流が低下して起こるめまい・失神の状態を何というか。',
+   c:['ワルファリン症候群','アダムス・ストークス症候群','ウェルニッケ脳症','マロリー・ワイス症候群'],a:1,
+   e:'アダムス・ストークス症候群は徐脈（完全房室ブロック等）により脳血流が低下→めまい・失神・けいれん。ペースメーカーが根本治療。モビッツII型・完全房室ブロックでペースメーカー植え込みの適応。'},
+  {id:'q407',unit:'u04',cat:'不整脈',
+   q:'ペースメーカーを植え込んだ患者への生活指導として正しいのはどれか。',
+   c:['MRI検査は通常通り受けられる','電磁調理器や電子商品監視装置に近づかないよう指導する','毎日の脈拍測定は不要','激しい運動は制限しなくてよい'],a:1,
+   e:'ペースメーカーは電磁波の影響を受けやすい。電磁調理器・電子商品監視装置・MRI（原則禁忌）は避ける。毎日の脈拍測定も重要な自己管理。社会資源：自立支援医療（更生医療）・身体障害者手帳。'},
+  {id:'q408',unit:'u04',cat:'不整脈',
+   q:'心房細動に対して使用される抗凝固療法の主な目的はどれか。',
+   c:['心拍数を正常に戻すため','血栓形成を予防して脳塞栓症を防ぐため','心房の細動波を消すため','血圧を下げるため'],a:1,
+   e:'心房細動では左心房に血栓ができやすく脳塞栓症リスクが高い。ワルファリン等の抗凝固薬で血栓形成を予防する。ワルファリンの効果判定はPT-INR（目標2.0〜3.0）。'},
+  {id:'q409',unit:'u04',cat:'不整脈',
+   q:'房室ブロックで最も緊急性が高くペースメーカーの適応となるのはどれか。',
+   c:['1度房室ブロック','2度ウェンケバッハ型','2度モビッツII型と3度（完全）房室ブロック','全ての房室ブロック'],a:2,
+   e:'モビッツII型は前触れなく突然信号が途切れる。3度（完全）は心房と心室が全く独立して動く。どちらもペースメーカーの植え込みが必要。1度・ウェンケバッハ型は経過観察が多い。'},
+  {id:'q410',unit:'u04',cat:'不整脈',
+   q:'心室細動の心電図の特徴として正しいのはどれか。',
+   c:['P波の消失と細動波','規則的なのこぎり歯状の波形','極めて不規則でぐちゃぐちゃな波形','PQ間隔の延長のみ'],a:2,
+   e:'心室細動はP波・QRS波・T波の区別が全くつかない、極めて不規則でぐちゃぐちゃな波形が特徴。心房細動の「細かく規則的な揺れ」と区別すること。心停止に直結する最も危険な不整脈。'},
+
+  // ── u05 狭心症・心筋梗塞 ──
+  {id:'q501',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'狭心症と心筋梗塞の最も重要な違いはどれか。',
+   c:['痛みの場所が違う','心筋の壊死が起きているかどうか','使う検査が違う','治療薬が全く異なる'],a:1,
+   e:'狭心症は冠動脈が狭窄して心筋が一時的に酸素不足になるが壊死はしていない。心筋梗塞は完全閉塞により心筋が壊死した状態。「壊死あり＝梗塞、壊死なし＝狭心症」が最重要の区別。虚血が20分以上続くと壊死が始まる。'},
+  {id:'q502',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'狭心症発作時の心電図で特徴的な所見はどれか。',
+   c:['ST上昇','ST低下','P波の消失','異常Q波'],a:1,
+   e:'狭心症発作時はST低下が特徴。心筋梗塞はST上昇が特徴（さらに進行すると異常Q波）。「狭心症＝ST低下、心筋梗塞＝ST上昇」のセットで必ず覚える。'},
+  {id:'q503',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'狭心症発作時にニトログリセリンを投与する正しい方法はどれか。',
+   c:['コップ1杯の水で内服する','舌下投与する','筋肉内注射する','皮下注射する'],a:1,
+   e:'ニトログリセリンは舌下投与が基本。経口投与（内服）では肝臓での初回通過効果で失活してしまう。舌下なら1〜2分で効果が現れる。副作用として血圧低下・ふらつきに注意。'},
+  {id:'q504',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'心筋梗塞に特徴的な血液検査の所見はどれか。',
+   c:['BNPの著明な上昇','CK（クレアチンキナーゼ）とトロポニンTの上昇','PT-INRの延長','白血球の著明な低下'],a:1,
+   e:'心筋が壊死すると細胞内のCKとトロポニンTが血中に漏れ出て上昇する。特にトロポニンTは心筋特異性が高い。発症後3時間から上昇し始める。BNPは心不全のマーカー。'},
+  {id:'q505',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'急性心筋梗塞の初期薬物療法「MONA」のAは何か。',
+   c:['アドレナリン（Adrenaline）','アトロピン（Atropine）','アスピリン（Aspirin）','アミオダロン（Amiodarone）'],a:2,
+   e:'MONAとはM：モルヒネ（鎮痛）、O：酸素（供給）、N：ニトログリセリン（血管拡張）、A：アスピリン（抗血小板）。アスピリンは血栓形成を防ぐ抗血小板薬。アドレナリンはMONAに含まれない。'},
+  {id:'q506',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'冠動脈造影検査（カテーテル）後、大腿動脈穿刺の場合の安静時間はどれか。',
+   c:['1〜2時間','2〜4時間','6〜8時間の絶対安静','24時間以上'],a:2,
+   e:'穿刺部位別の安静時間：橈骨動脈2〜4h、上腕動脈4〜6h、大腿動脈6〜8hの絶対安静（最も長い）。穿刺部より末梢の動脈拍動・しびれ・麻痺の観察も重要。'},
+  {id:'q507',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'心臓リハビリテーションを中止すべき基準として正しいのはどれか。',
+   c:['心拍数が90回/分を超えた','収縮期血圧が120mmHgを超えた','心拍数120回/分以上または収縮期血圧180mmHg以上になった','軽度の発汗が出現した'],a:2,
+   e:'心臓リハビリの中止基準：心拍数120回/分以上、収縮期血圧180mmHg以上、中等度の呼吸困難・めまい・胸痛の出現。段階的に立位→歩行→階段昇降と拡大するが、これらの症状で直ちに中止する。'},
+  {id:'q508',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'狭心症・心筋梗塞患者の食事指導で正しいのはどれか。',
+   c:['動物性脂肪（飽和脂肪酸）を積極的に摂る','塩分は1日6g未満に制限し、魚（DHA・EPA）を勧める','水分を極力制限する','高残渣食（食物繊維の多い食事）は避ける'],a:1,
+   e:'再発予防の食事指導：塩分1日6g未満、飽和脂肪酸（牛肉等）を控え不飽和脂肪酸（魚のDHA・EPA）を勧める、水溶性食物繊維を増やす（高残渣食）。禁煙・適度な運動も重要。'},
+  {id:'q509',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'狭心症・心筋梗塞の共通する主な原因はどれか。',
+   c:['自己免疫異常','冠動脈の動脈硬化','感染症による血管炎','先天性の心臓奇形'],a:1,
+   e:'両疾患の根本原因は冠動脈の動脈硬化。血管内皮の損傷→LDLコレステロールがプラーク形成→破裂→血栓→狭窄（狭心症）または閉塞（心筋梗塞）。危険因子：高血圧・喫煙・糖尿病・脂質異常症・肥満。'},
+  {id:'q510',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'心筋梗塞のショック症状として正しいのはどれか。',
+   c:['高血圧・徐脈・顔面紅潮','血圧低下・頻脈・顔面蒼白・冷や汗・尿量減少','高体温・筋強剛・意識障害','浮腫・頸静脈怒張・肝腫大'],a:1,
+   e:'心筋梗塞によるショック（心原性ショック）：心機能低下→血圧低下・頻脈（代償）・顔面蒼白・冷や汗・尿量減少。これらが「出血性ショック」と同様の5徴候を示す。即座に医師に報告・対応が必要。'},
+];
+
+// ═══════════════ STATE ═══════════════
+const STATE = {
+  unitRank:  JSON.parse(localStorage.getItem('jk_unitRank')  || '{}'),
+  unitDone:  JSON.parse(localStorage.getItem('jk_unitDone')  || '{}'),
+  unitScore: JSON.parse(localStorage.getItem('jk_unitScore') || '{}'),
+  reviewQ:   JSON.parse(localStorage.getItem('jk_reviewQ')   || '[]'),
+  save(){
+    localStorage.setItem('jk_unitRank',  JSON.stringify(this.unitRank));
+    localStorage.setItem('jk_unitDone',  JSON.stringify(this.unitDone));
+    localStorage.setItem('jk_unitScore', JSON.stringify(this.unitScore));
+    localStorage.setItem('jk_reviewQ',   JSON.stringify(this.reviewQ));
+  },
+  addReview(qid){
+    const ex = this.reviewQ.find(r=>r.qid===qid);
+    if(ex){ ex.wrongCount=(ex.wrongCount||0)+1; ex.cleared=false; }
+    else { this.reviewQ.push({qid,wrongCount:1,cleared:false}); }
+    this.save();
+  },
+  clearReview(qid){
+    const ex = this.reviewQ.find(r=>r.qid===qid);
+    if(ex){ ex.cleared=true; this.save(); }
+  },
+  getActiveReview(){ return this.reviewQ.filter(r=>!r.cleared); },
+};
+
+// ═══════════════ NAV ═══════════════
+function nav(page){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tnav').forEach(t=>t.classList.remove('on'));
+  document.getElementById('page-'+page).classList.add('active');
+  const idx=['home','study','quiz','review','flash'].indexOf(page);
+  document.querySelectorAll('.tnav')[idx]?.classList.add('on');
+  if(page==='home')       renderHome();
+  if(page==='study')      renderStudy();
+  if(page==='review')     renderReview();
+  if(page==='flash')      renderFC();
+  if(page==='quiz')       showQuizMenu();
+  updateReviewBadge();
+}
+
+function openUnitDetail(unitId){
+  const u = UNITS.find(u=>u.id===unitId);
+  const sec = STUDY_SECTIONS.find(s=>s.unitId===unitId);
+  const qCnt = QUESTIONS.filter(q=>q.unit===unitId).length;
+  const sc = STATE.unitScore[unitId]||{correct:0,total:0};
+  const pct = sc.total>0?Math.round(sc.correct/sc.total*100):0;
+
+  document.getElementById('ud-header').innerHTML = `
+    <div style="background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:20px;margin-bottom:20px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+        <span style="font-size:32px;">${u.icon}</span>
+        <div>
+          <div style="font-family:'Noto Serif JP',serif;font-size:20px;font-weight:900;color:var(--tx);">${u.name}</div>
+          <div style="font-size:12px;color:var(--txd);margin-top:2px;">${u.desc}</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;font-size:12px;color:var(--txd);">
+        <span>📝 ${qCnt}問</span>
+        ${sc.total>0?`<span>✅ ${sc.correct}/${sc.total}問正解 (${pct}%)</span>`:''}
+      </div>
+    </div>
+  `;
+
+  if(sec){
+    document.getElementById('ud-text-body').innerHTML = `
+      <div style="background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:20px;margin-bottom:8px;">
+        <div style="font-size:11px;color:#ef4444;font-family:'DM Mono',monospace;letter-spacing:1px;margin-bottom:14px;">📖 要点テキスト</div>
+        ${sec.content}
+      </div>
+    `;
+  } else {
+    document.getElementById('ud-text-body').innerHTML = `
+      <div style="background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:40px;text-align:center;color:var(--txd);margin-bottom:8px;">
+        テキストは準備中です
+      </div>
+    `;
+  }
+
+  document.getElementById('ud-start-btn').onclick = ()=>{
+    startQuiz(unitId);
+    nav('quiz');
+  };
+
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-unitdetail').classList.add('active');
+  document.querySelectorAll('.tnav').forEach(t=>t.classList.remove('on'));
+  window.scrollTo(0,0);
+  updateReviewBadge();
+}
+
+function updateReviewBadge(){
+  const cnt=STATE.getActiveReview().length;
+  const b=document.getElementById('review-badge');
+  if(cnt>0){b.style.display='inline-flex';b.textContent=cnt;}
+  else{b.style.display='none';}
+}
+
+// ═══════════════ HOME ═══════════════
+function renderHome(){
+  renderSummary();
+  const grid=document.getElementById('unit-grid');
+  grid.innerHTML='';
+  UNITS.forEach(u=>{
+    const rank=STATE.unitRank[u.id]||'none';
+    const done=STATE.unitDone[u.id]||false;
+    const sc=STATE.unitScore[u.id]||{correct:0,total:0};
+    const pct=sc.total>0?Math.round(sc.correct/sc.total*100):0;
+    const qCnt=QUESTIONS.filter(q=>q.unit===u.id).length;
+    const card=document.createElement('div');
+    card.className=`unit-card rank-${rank}`;
+    card.innerHTML=`
+      <div class="unit-top">
+        <span class="unit-icon">${u.icon}</span>
+        <div><div class="unit-name">${u.name}</div><div class="unit-desc">${u.desc}</div></div>
+      </div>
+      <div class="unit-meta">
+        <span class="rank-badge ${rank}" id="rbadge-${u.id}">${rank==='none'?'未評価':rank==='A'?'✅ A: OK':rank==='B'?'🔁 B: 要復習':'🚨 C: 絶対復習'}</span>
+        <label class="done-check" onclick="event.stopPropagation()">
+          <input type="checkbox" id="done-${u.id}" ${done?'checked':''} onchange="toggleDone('${u.id}',this.checked)">
+          <span>${done?'完了':'未完了'}</span>
+        </label>
+        <span style="font-size:11px;color:var(--txd);margin-left:auto;">${qCnt}問</span>
+        <div class="rank-selector" onclick="event.stopPropagation()">
+          ${['A','B','C'].map(r=>`<button class="rank-btn ${r} ${rank===r?'sel':''}" onclick="setRank('${u.id}','${r}',this)">${r}</button>`).join('')}
+        </div>
+      </div>
+      ${sc.total>0?`<div class="unit-progress-bar"><div class="unit-progress-fill" style="width:${pct}%"></div></div><div style="font-size:10px;color:var(--txd);margin-top:4px;font-family:'DM Mono',monospace;">${sc.correct}/${sc.total}問正解 (${pct}%)</div>`:''}
+    `;
+    card.addEventListener('click',()=>openUnitDetail(u.id));
+    // 図ボタン追加
+    const figMap = {u01:'shinzo', u04:'shindenzu'};
+    if(figMap[u.id]){
+      const figBtn = document.createElement('button');
+      figBtn.className='fig-btn';
+      figBtn.innerHTML='📊 図を見る';
+      figBtn.onclick=(e)=>{e.stopPropagation();openFigModal(figMap[u.id]);};
+      card.querySelector('.unit-meta').after(figBtn);
+    }
+    grid.appendChild(card);
+  });
+}
+
+function renderSummary(){
+  const total=UNITS.length;
+  const done=Object.values(STATE.unitDone).filter(Boolean).length;
+  const rankA=Object.values(STATE.unitRank).filter(r=>r==='A').length;
+  const rankC=Object.values(STATE.unitRank).filter(r=>r==='C').length;
+  const rev=STATE.getActiveReview().length;
+
+  // 単元別カバー率：このプログラムの問題数 ÷ QB循環器収録数（過去10回分）
+  // QB掲載数：心臓の構造3問、高血圧5問、心不全14問、不整脈13問、狭心症・心筋梗塞5問
+  const QB_COUNTS = {u01:14, u02:8, u03:18, u04:14, u05:12};
+  let coverRows = UNITS.map(u=>{
+    const myQ = QUESTIONS.filter(q=>q.unit===u.id).length;
+    const qbQ = QB_COUNTS[u.id] || 1;
+    const pct = Math.min(100, Math.round(myQ/qbQ*100));
+    const bar = `<div style="height:4px;background:var(--bd2);border-radius:2px;margin-top:4px;overflow:hidden;"><div style="width:${pct}%;height:100%;background:#ef4444;border-radius:2px;"></div></div>`;
+    return `<tr>
+      <td style="padding:4px 8px;font-size:12px;color:var(--tx);">${u.icon} ${u.name}</td>
+      <td style="padding:4px 8px;font-size:11px;color:var(--txd);text-align:center;">${myQ}問</td>
+      <td style="padding:4px 8px;font-size:11px;color:var(--txd);text-align:center;">QB約${qbQ}問</td>
+      <td style="padding:4px 8px;min-width:80px;">${bar}<span style="font-size:11px;color:#ef4444;font-family:'DM Mono',monospace;">${pct}%</span></td>
+    </tr>`;
+  }).join('');
+
+  document.getElementById('prog-summary').innerHTML=`
+    <div class="prog-card"><div class="prog-num" style="color:var(--ac3)">${done}/${total}</div><div class="prog-label">完了単元</div></div>
+    <div class="prog-card"><div class="prog-num" style="color:var(--rankA)">${rankA}</div><div class="prog-label">A（確認済み）</div></div>
+    <div class="prog-card"><div class="prog-num" style="color:var(--rankC)">${rankC}</div><div class="prog-label">C（苦手）</div></div>
+    <div class="prog-card"><div class="prog-num" style="color:var(--ac2)">${rev}</div><div class="prog-label">復習待ち</div></div>
+  `;
+
+  // カバー率テーブルを別枠で表示
+  const coverEl = document.getElementById('cover-table');
+  if(coverEl){
+    // QUESTIONSから直接カウント
+    function buildCoverTable(){
+      var rows = "";
+      for(var i=0;i<UNITS.length;i++){
+        var u = UNITS[i];
+        var myQ = QUESTIONS.filter(function(q){return q.unit===u.id;}).length;
+        var qbQ = QB_COUNTS[u.id] || 1;
+        var pct = Math.min(100, Math.round(myQ/qbQ*100));
+        var color = pct>=100 ? "#22c55e" : pct>=80 ? "#f59e0b" : "#ef4444";
+        rows += "<tr style=\"border-bottom:1px solid var(--bd);\">";
+        rows += "<td style=\"padding:6px 8px;font-size:13px;color:var(--tx);\">" + u.icon + " " + u.name + "</td>";
+        rows += "<td style=\"padding:6px 8px;font-size:13px;color:var(--tx);text-align:center;\">" + myQ + "問</td>";
+        rows += "<td style=\"padding:6px 8px;font-size:12px;color:var(--txd);text-align:center;\">QB約" + qbQ + "問</td>";
+        rows += "<td style=\"padding:6px 8px;min-width:100px;\">";
+        rows += "<div style=\"height:5px;background:var(--bd2);border-radius:2px;margin-bottom:3px;overflow:hidden;\">";
+        rows += "<div style=\"width:" + pct + "%;height:100%;background:" + color + ";border-radius:2px;\"></div></div>";
+        rows += "<span style=\"font-size:12px;color:" + color + ";font-weight:700;\">" + pct + "%</span></td></tr>";
+      }
+      var html = "<div style=\"font-size:11px;color:var(--txd);margin-bottom:8px;\">国試カバー率 — 本プログラムの問題数 ÷ QB循環器収録数（過去10回分）</div>";
+      html += "<table style=\"width:100%;border-collapse:collapse;\">";
+      html += "<tr style=\"border-bottom:2px solid var(--bd);\">";
+      html += "<th style=\"padding:4px 8px;font-size:10px;color:var(--txd);text-align:left;\">単元</th>";
+      html += "<th style=\"padding:4px 8px;font-size:10px;color:var(--txd);text-align:center;\">本プログラム</th>";
+      html += "<th style=\"padding:4px 8px;font-size:10px;color:var(--txd);text-align:center;\">QB収録数</th>";
+      html += "<th style=\"padding:4px 8px;font-size:10px;color:var(--txd);\">カバー率</th></tr>";
+      html += rows;
+      html += "</table><div style=\"font-size:10px;color:var(--txd);margin-top:8px;\">※QB収録数は過去10回分の循環器過去問をもとにした目安です</div>";
+      return html;
+    }
+    coverEl.innerHTML = buildCoverTable();
+  }
+}
+
+function setRank(uid,rank,btn){
+  STATE.unitRank[uid]=rank; STATE.save();
+  const card=btn.closest('.unit-card');
+  card.className=`unit-card rank-${rank}`;
+  card.querySelectorAll('.rank-btn').forEach(b=>b.classList.toggle('sel',b.classList.contains(rank)));
+  const badge=document.getElementById('rbadge-'+uid);
+  if(badge){badge.className=`rank-badge ${rank}`;badge.textContent=rank==='A'?'✅ A: OK':rank==='B'?'🔁 B: 要復習':'🚨 C: 絶対復習';}
+  renderSummary(); toast(`${rank}ランクに設定しました`);
+}
+
+function toggleDone(uid,checked){
+  STATE.unitDone[uid]=checked; STATE.save();
+  const lbl=document.querySelector(`#done-${uid}`).closest('.done-check').querySelector('span');
+  if(lbl)lbl.textContent=checked?'完了':'未完了';
+  renderSummary(); toast(checked?'✅ 完了にしました':'⬜ 未完了に戻しました');
+}
+
+// ═══════════════ QUIZ ENGINE ═══════════════
+let qPool=[], qIdx=0, qScore=0, qWrong=[], qMode='', qUnitId='';
+let selectedUnits=[];
+
+function showQuizMenu(){
+  document.getElementById('quiz-mode-select').style.display='block';
+  document.getElementById('quiz-area').style.display='none';
+  document.getElementById('quiz-result').style.display='none';
+  document.getElementById('total-q-count').textContent = QUESTIONS.length;
+}
+
+function showUnitSelect(){
+  const panel = document.getElementById('unit-select-panel');
+  panel.style.display = panel.style.display==='none'?'block':'none';
+  if(panel.style.display==='block'){
+    const list = document.getElementById('unit-select-list');
+    list.innerHTML='';
+    selectedUnits=[];
+    UNITS.forEach(u=>{
+      const btn = document.createElement('button');
+      btn.className='stab';
+      btn.textContent=`${u.icon} ${u.name}`;
+      btn.dataset.uid=u.id;
+      btn.onclick=()=>{
+        btn.classList.toggle('sa');
+        const sel = document.querySelectorAll('#unit-select-list .stab.sa').length;
+        document.getElementById('start-selected-btn').disabled = sel===0;
+      };
+      list.appendChild(btn);
+    });
+  }
+}
+
+function startQuizSelected(){
+  const selected = [...document.querySelectorAll('#unit-select-list .stab.sa')].map(b=>b.dataset.uid);
+  const pool = QUESTIONS.filter(q=>selected.includes(q.unit));
+  if(pool.length===0){ toast('問題がありません'); return; }
+  qMode='selected'; qUnitId=selected.join(',');
+  launchQuiz(pool);
+}
+
+function startQuiz(unitId){
+  if(unitId==='all'){
+    qMode='all'; qUnitId='all';
+    launchQuiz([...QUESTIONS].sort(()=>Math.random()-.5));
+  } else {
+    qMode='unit'; qUnitId=unitId;
+    const pool = QUESTIONS.filter(q=>q.unit===unitId).sort(()=>Math.random()-.5);
+    if(pool.length===0){ toast('この単元にはまだ問題がありません'); return; }
+    launchQuiz(pool);
+    nav('quiz');
+  }
+}
+
+function launchQuiz(pool){
+  qPool=[...pool]; qIdx=0; qScore=0; qWrong=[];
+  document.getElementById('quiz-mode-select').style.display='none';
+  document.getElementById('quiz-area').style.display='block';
+  document.getElementById('quiz-result').style.display='none';
+  renderQuestion();
+}
+
+function renderQuestion(){
+  const q = qPool[qIdx];
+  const total = qPool.length;
+  document.getElementById('q-num-label').textContent=`${qIdx+1} / ${total}`;
+  document.getElementById('q-unit-label').textContent = UNITS.find(u=>u.id===q.unit)?.name || q.unit;
+  document.getElementById('qprogfill').style.width=`${(qIdx/total)*100}%`;
+  document.getElementById('q-cat-tag').textContent=q.cat;
+  document.getElementById('q-text').textContent=q.q;
+  document.getElementById('q-exp').classList.remove('show');
+  document.getElementById('q-exp-text').textContent=q.e;
+  document.getElementById('q-next-btn').style.display='none';
+  const ch = document.getElementById('q-choices');
+  ch.innerHTML='';
+  const nums=['①','②','③','④'];
+  q.c.forEach((choice,i)=>{
+    const btn = document.createElement('button');
+    btn.className='choice';
+    btn.innerHTML=`<span class="choice-num">${nums[i]}</span><span>${choice}</span>`;
+    btn.onclick=()=>answer(i,btn);
+    ch.appendChild(btn);
+  });
+}
+
+function answer(i, btn){
+  const q=qPool[qIdx];
+  document.querySelectorAll('.choice').forEach(b=>b.disabled=true);
+  if(i===q.a){
+    btn.classList.add('correct');
+    qScore++;
+    if(qMode==='review') STATE.clearReview(q.id);
+    confettiPop();
+  } else {
+    btn.classList.add('wrong');
+    document.querySelectorAll('.choice')[q.a].classList.add('correct');
+    qWrong.push(q);
+    STATE.addReview(q.id);
+  }
+  if(!STATE.unitScore[q.unit]) STATE.unitScore[q.unit]={correct:0,total:0};
+  STATE.unitScore[q.unit].total++;
+  if(i===q.a) STATE.unitScore[q.unit].correct++;
+  STATE.save();
+  updateReviewBadge();
+  document.getElementById('q-exp').classList.add('show');
+  document.getElementById('q-next-btn').style.display='inline-block';
+  const qFigMap = {u01:'shinzo', u04:'shindenzu'};
+  const expEl = document.getElementById('q-exp');
+  const oldFig = expEl.querySelector('.exp-fig');
+  if(oldFig) oldFig.remove();
+  const figKey = qFigMap[q.unit];
+  if(figKey){
+    const figDiv = document.createElement('div');
+    figDiv.className='exp-fig';
+    figDiv.innerHTML=`<div class="exp-fig-title">RELATED FIGURE</div><button class="fig-btn" onclick="openFigModal('${figKey}')">📊 関連図を見る</button>`;
+    expEl.appendChild(figDiv);
+  }
+}
+
+function nextQuestion(){
+  qIdx++;
+  if(qIdx>=qPool.length) showResult();
+  else renderQuestion();
+}
+
+function endQuiz(){ showResult(); }
+
+function showResult(){
+  document.getElementById('quiz-area').style.display='none';
+  document.getElementById('quiz-result').style.display='block';
+  const pct = Math.round(qScore/qPool.length*100);
+  document.getElementById('res-pct').textContent=pct+'%';
+  document.getElementById('res-msg').textContent =
+    pct>=90?'🎉 優秀！合格圏内です！':
+    pct>=70?'👍 あと一息！苦手を復習しよう':
+    '📚 テキストに戻って復習しましょう';
+  document.getElementById('res-ok').textContent=qScore;
+  document.getElementById('res-ng').textContent=qPool.length-qScore;
+  document.getElementById('res-tot').textContent=qPool.length;
+  const ws = document.getElementById('wrong-summary');
+  if(qWrong.length>0){
+    ws.innerHTML=`<div style="font-size:12px;color:var(--ac2);margin-bottom:8px;">⚠️ 間違えた問題（${qWrong.length}問）→ 復習リストに追加済み</div>`+
+      qWrong.map(q=>`<div style="font-size:12px;color:var(--txd);padding:5px 0;border-bottom:1px solid var(--bd);">❌ ${q.q.substring(0,40)}…</div>`).join('');
+  } else {
+    ws.innerHTML='<div style="font-size:13px;color:var(--ac3);">🎯 全問正解！すばらしい！</div>';
+  }
+  if(pct>=80) confettiPop(true);
+  updateReviewBadge();
+}
+
+// ═══════════════ REVIEW ═══════════════
+function renderReview(){
+  const list=document.getElementById('review-list');
+  const active=STATE.getActiveReview();
+  if(active.length===0){
+    list.innerHTML='<div style="text-align:center;padding:60px 20px;color:var(--txd)"><div style="font-size:48px;margin-bottom:12px">🎉</div><div>復習リストは空です！</div></div>';
+    return;
+  }
+  list.innerHTML=active.map(r=>{
+    const q=QUESTIONS.find(q=>q.id===r.qid);
+    if(!q)return'';
+    const u=UNITS.find(u=>u.id===q.unit);
+    return`<div class="review-item">
+      <div class="review-item-body">
+        <div class="review-q">${q.q}</div>
+        <div class="review-tags">
+          <span class="rtag rtag-unit">${u?.name||''}</span>
+          <span class="rtag rtag-wrong">間違い ${r.wrongCount}回</span>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function startReviewQuiz(){
+  const active=STATE.getActiveReview();
+  if(active.length===0){toast('復習リストは空です'); return;}
+  const pool=active.map(r=>QUESTIONS.find(q=>q.id===r.qid)).filter(Boolean);
+  startQuizFromPool(pool,'review');
+}
+
+function clearAllReview(){
+  STATE.reviewQ=[]; STATE.save();
+  renderReview(); updateReviewBadge();
+  toast('復習リストをクリアしました');
+}
+
+// ═══════════════ FLASHCARD ═══════════════
+let fcList=[],fcIdx=0;
+function renderFC(){
+  fcList=QUESTIONS.map(q=>({front:q.q,sub:q.cat,back:`正解: ${q.c[q.a]}\n\n${q.e.slice(0,80)}…`}));
+  fcIdx=0; showFC();
+}
+function showFC(){
+  if(!fcList.length)return;
+  const fc=fcList[fcIdx];
+  document.getElementById('fc-front').textContent=fc.front;
+  document.getElementById('fc-sub').textContent=fc.sub;
+  document.getElementById('fc-back').textContent=fc.back;
+  document.getElementById('fc-cnt').textContent=`${fcIdx+1} / ${fcList.length}`;
+  document.getElementById('fc-card').classList.remove('flipped');
+}
+function flipFC(){document.getElementById('fc-card').classList.toggle('flipped');}
+function nextFC(){fcIdx=(fcIdx+1)%fcList.length;showFC();}
+function prevFC(){fcIdx=(fcIdx-1+fcList.length)%fcList.length;showFC();}
+function shuffleFC(){fcList=fcList.sort(()=>Math.random()-.5);fcIdx=0;showFC();toast('🔀 シャッフルしました');}
+
+// ═══════════════ CONFETTI ═══════════════
+function confettiPop(big=false){
+  const canvas=document.getElementById('confetti-canvas');
+  canvas.style.display='block';
+  const ctx=canvas.getContext('2d');
+  canvas.width=window.innerWidth; canvas.height=window.innerHeight;
+  const N=big?120:40;
+  const colors=['#ef4444','#f97316','#22c55e','#3b82f6','#a78bfa','#f59e0b'];
+  let particles=Array.from({length:N},()=>({
+    x:Math.random()*canvas.width,y:Math.random()*canvas.height*.3,
+    vx:(Math.random()-.5)*4,vy:Math.random()*3+1,
+    r:Math.random()*5+3,c:colors[Math.floor(Math.random()*colors.length)],a:1
+  }));
+  let frame=0;
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(p=>{
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle=p.c; ctx.globalAlpha=p.a; ctx.fill();
+      p.x+=p.vx; p.y+=p.vy; p.a-=0.015;
+    });
+    ctx.globalAlpha=1;
+    particles=particles.filter(p=>p.a>0);
+    frame++;
+    if(particles.length>0&&frame<150)requestAnimationFrame(draw);
+    else{canvas.style.display='none';}
+  }
+  draw();
+}
+
+// ═══════════════ TOAST ═══════════════
+function toast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2200);
+}
+
+// ═══════════════ STUDY TEXT ═══════════════
+const STUDY_SECTIONS = [
+  { id:'ss1', unitId:'u01', label:'🫀 心臓の構造', content:`
+<div style="margin-bottom:16px;">
+<div style="font-family:'Noto Serif JP',serif;font-size:18px;font-weight:900;color:#ef4444;margin-bottom:4px;">心臓の構造と血液の流れ</div>
+<div style="font-size:12px;color:var(--txm);">体循環・肺循環・動脈血と静脈血・刺激伝導系</div>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">🔄 体循環と肺循環</div>
+<table class="dt">
+<tr><th>循環の種類</th><th>経路</th><th>血液の種類</th></tr>
+<tr><td><strong>体循環</strong></td><td>左心室 → 大動脈 → 全身 → 上下大静脈 → 右心房</td><td>動脈血→静脈血</td></tr>
+<tr><td><strong>肺循環</strong></td><td>右心室 → 肺動脈 → 肺 → 肺静脈 → 左心房</td><td>静脈血→動脈血</td></tr>
+</table>
+<div class="nb w" style="margin-top:8px;">⚠️ <strong>頻出ひっかけ</strong>：肺動脈には「静脈血」が流れ、肺静脈には「動脈血」が流れる。名前と逆！</div>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">🫀 心臓の4つの部屋</div>
+<table class="dt">
+<tr><th>部屋</th><th>役割</th><th>特徴</th></tr>
+<tr><td>左心室</td><td>全身へ血液を送り出す</td><td><span style="color:#ef4444;font-weight:700;">壁が最も厚い</span>（高圧が必要）</td></tr>
+<tr><td>右心室</td><td>肺へ血液を送る</td><td>左心室より薄い</td></tr>
+<tr><td>左心房</td><td>肺から血液を受け取る</td><td>肺静脈（動脈血）が流入</td></tr>
+<tr><td>右心房</td><td>全身から血液を受け取る</td><td>上下大静脈（静脈血）が流入</td></tr>
+</table>
+<div class="nb" style="margin-top:8px;">💡 <strong>左右心室で等しいもの</strong>：心拍数・1回拍出量（壁の厚さ・内圧は左＞右）</div>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">⚡ 刺激伝導系（心臓のペースメーカーシステム）</div>
+<div style="display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:12px;padding:10px 0;">
+  <div style="background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);border-radius:6px;padding:6px 12px;color:#ef4444;font-weight:700;">洞房結節<br><span style="font-size:10px;color:var(--txm);">右心房・ペースメーカー</span></div>
+  <div style="color:var(--txd);font-size:18px;">→</div>
+  <div style="background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.4);border-radius:6px;padding:6px 12px;color:#f59e0b;font-weight:700;">房室結節<br><span style="font-size:10px;color:var(--txm);">興奮を一時停止</span></div>
+  <div style="color:var(--txd);font-size:18px;">→</div>
+  <div style="background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.4);border-radius:6px;padding:6px 12px;color:#3b82f6;font-weight:700;">ヒス束<br><span style="font-size:10px;color:var(--txm);">心室中隔を走る</span></div>
+  <div style="color:var(--txd);font-size:18px;">→</div>
+  <div style="background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.4);border-radius:6px;padding:6px 12px;color:#22c55e;font-weight:700;">プルキンエ線維<br><span style="font-size:10px;color:var(--txm);">心室筋へ</span></div>
+</div>
+<div class="nb" style="margin-top:4px;">💡 覚え方：<strong>「洞→房→ヒス→プル」</strong></div>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">🩸 動脈血と静脈血が流れる場所</div>
+<table class="dt">
+<tr><th>動脈血が流れる場所</th><th>静脈血が流れる場所</th></tr>
+<tr><td>肺静脈・左心房・左心室・全身の動脈</td><td>全身の静脈・右心房・右心室・肺動脈</td></tr>
+</table>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">🔊 心音（第Ⅰ音・第Ⅱ音）</div>
+<table class="dt">
+<tr><th>心音</th><th>原因</th><th>タイミング</th></tr>
+<tr><td><strong>第Ⅰ音（ドッ）</strong></td><td><span style="color:#ef4444;font-weight:700;">房室弁の閉鎖</span>（僧帽弁・三尖弁）</td><td>心室収縮期の初め</td></tr>
+<tr><td><strong>第Ⅱ音（クン）</strong></td><td><span style="color:#ef4444;font-weight:700;">半月弁の閉鎖</span>（大動脈弁・肺動脈弁）</td><td>心室収縮期の終わり</td></tr>
+</table>
+<div class="nb" style="margin-top:8px;">💡 覚え方：<strong>「Ⅰ音=房室弁、Ⅱ音=半月弁」</strong>（第113・114回で連続出題）</div>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">📊 血圧の決定要因</div>
+<div style="background:var(--sf2);border-radius:8px;padding:10px;text-align:center;font-size:14px;font-weight:700;color:var(--tx);margin-bottom:8px;">血圧 ＝ 心拍出量 × 末梢血管抵抗</div>
+<table class="dt">
+<tr><th>血圧を上げる要因</th><th>血圧を下げる要因</th></tr>
+<tr><td>末梢血管抵抗の増大★</td><td>末梢血管抵抗の低下</td></tr>
+<tr><td>心拍出量の増加</td><td>心拍出量の減少</td></tr>
+<tr><td>循環血液量の増加</td><td>循環血液量の減少</td></tr>
+<tr><td>血液粘稠度の上昇</td><td>血液粘稠度の低下</td></tr>
+</table>
+<div class="nb w" style="margin-top:8px;">⚠️ 加齢→血管弾力性低下→末梢抵抗増大→<strong>収縮期血圧↑・拡張期血圧↓</strong>（脈圧拡大）</div>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">💊 心不全の主要薬と目的（国試頻出）</div>
+<table class="dt">
+<tr><th>薬剤</th><th>主な目的</th><th>注意点</th></tr>
+<tr><td><strong>利尿薬（フロセミド）</strong></td><td><span style="color:#ef4444;font-weight:700;">循環血液量の減少→前負荷軽減</span></td><td>低K血症→不整脈リスク</td></tr>
+<tr><td><strong>ACE阻害薬・ARB</strong></td><td>末梢血管拡張→後負荷軽減・心保護</td><td>ACE阻害薬→空咳（10〜20%）</td></tr>
+<tr><td><strong>ジゴキシン</strong></td><td>強心作用（収縮力↑）・心拍数↓</td><td>TDM必須・低K血症で中毒↑</td></tr>
+<tr><td><strong>β遮断薬</strong></td><td>心拍数↓→心臓を休ませる</td><td>気管支喘息禁忌</td></tr>
+</table>
+<div class="nb w" style="margin-top:8px;">⚠️ 強心薬＋利尿薬の組み合わせ：<strong>低K血症→ジゴキシン中毒→不整脈</strong>の悪循環に注意（第114回出題）</div>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">🔍 浮腫の観察ポイント</div>
+<table class="dt">
+<tr><th>体位</th><th>最適な観察部位</th></tr>
+<tr><td>立位・座位</td><td><span style="color:#ef4444;font-weight:700;">下腿前面（脛骨前面）★</span></td></tr>
+<tr><td>臥床患者</td><td>仙骨部・背部</td></tr>
+</table>
+<div class="nb" style="margin-top:8px;">💡 圧痕性浮腫：指で10秒押して離した後にくぼみが残る＝陽性（第113回出題）</div>
+</div>
+<div style="margin-top:16px;padding-top:12px;border-top:1px solid var(--bd);">
+  <div style="font-size:11px;color:#ef4444;font-family:'DM Mono',monospace;letter-spacing:1px;margin-bottom:8px;">📊 図で確認</div>
+  <button class="fig-btn" onclick="openFigModal('shinzo')" style="font-size:13px;padding:8px 18px;">🫀 心臓の解剖図を見る（4部屋・血液の流れ）</button>
+</div>
+`},
+
+  { id:'ss2', unitId:'u02', label:'💊 高血圧の治療薬', content:`
+<div style="margin-bottom:16px;">
+<div style="font-family:'Noto Serif JP',serif;font-size:18px;font-weight:900;color:#ef4444;margin-bottom:4px;">高血圧の治療薬</div>
+<div style="font-size:12px;color:var(--txm);">Ca拮抗薬・ACE阻害薬・ARB・β遮断薬・利尿薬</div>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">🩸 血圧の公式（薬の理解の土台）</div>
+<div style="background:var(--sf2);border-radius:8px;padding:12px;text-align:center;font-size:15px;font-weight:700;color:var(--tx);margin-bottom:10px;">
+  血圧 ＝ 心拍出量 × 末梢血管抵抗
+</div>
+<table class="dt">
+<tr><th>心拍出量を下げる薬</th><th>血管抵抗を下げる薬</th><th>循環血液量を下げる薬</th></tr>
+<tr><td>β遮断薬</td><td>Ca拮抗薬・ACE阻害薬・ARB</td><td>利尿薬</td></tr>
+</table>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">💊 主要降圧薬 比較表</div>
+<table class="dt">
+<tr><th>分類</th><th>代表薬</th><th>特徴的副作用</th><th>禁忌・注意</th></tr>
+<tr><td><strong>ACE阻害薬</strong></td><td>エナラプリル</td><td><span style="color:#ef4444;font-weight:700;">空咳（10〜20%）★</span><br>ブラジキニン蓄積が原因</td><td>妊婦禁忌<br>→空咳が出たらARBへ変更</td></tr>
+<tr><td><strong>ARB</strong></td><td>カンデサルタン<br>ロサルタン</td><td>空咳なし（ACEの代替）</td><td>妊婦禁忌</td></tr>
+<tr><td><strong>Ca拮抗薬</strong></td><td>アムロジピン<br>ニフェジピン</td><td>下肢浮腫<br>歯肉肥厚</td><td><span style="color:#ef4444;font-weight:700;">グレープフルーツ禁忌</span><br>（CYP3A4阻害→血中濃度↑）</td></tr>
+<tr><td><strong>β遮断薬</strong></td><td>プロプラノロール<br>カルベジロール</td><td>徐脈<br>低血糖マスク</td><td><span style="color:#ef4444;font-weight:700;">気管支喘息禁忌</span><br>（気管支収縮）</td></tr>
+<tr><td><strong>ループ利尿薬</strong></td><td>フロセミド<br>（ラシックス）</td><td><span style="color:#ef4444;font-weight:700;">低K血症★</span><br>耳毒性（急速静注）</td><td>ジゴキシン併用注意</td></tr>
+<tr><td><strong>K保持性利尿薬</strong></td><td>スピロノラクトン</td><td><span style="color:#ef4444;font-weight:700;">高K血症★</span><br>女性化乳房</td><td>—</td></tr>
+</table>
+<div class="nb w" style="margin-top:8px;">⚠️ ループ利尿薬とK保持性利尿薬のカリウムへの影響は<strong>逆</strong>！ ループ＝低K、保持性＝高K</div>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">🔄 RAA系（レニン・アンジオテンシン・アルドステロン系）</div>
+<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;font-size:11px;padding:8px 0;">
+  <div style="background:var(--sf2);border:1px solid var(--bd2);border-radius:6px;padding:6px 10px;">腎臓が血流低下を感知</div>
+  <div style="color:var(--txd);">→</div>
+  <div style="background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:6px;padding:6px 10px;color:#ef4444;">レニン分泌</div>
+  <div style="color:var(--txd);">→</div>
+  <div style="background:var(--sf2);border:1px solid var(--bd2);border-radius:6px;padding:6px 10px;">アンジオテンシンI</div>
+  <div style="color:var(--txd);">→ <small>ACE</small> →</div>
+  <div style="background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);border-radius:6px;padding:6px 10px;color:#ef4444;font-weight:700;">アンジオテンシンII<br><small>血管収縮↑</small></div>
+  <div style="color:var(--txd);">→</div>
+  <div style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);border-radius:6px;padding:6px 10px;color:#f59e0b;">アルドステロン<br><small>Na・水再吸収↑</small></div>
+</div>
+<div class="nb" style="margin-top:8px;">💡 <strong>ACE阻害薬</strong>：IからIIへの変換をブロック ／ <strong>ARB</strong>：IIの受容体をブロック（どちらも血圧↓）</div>
+</div>
+`},
+
+  { id:'ss3', unitId:'u03', label:'🚑 心不全', content:`
+<div style="margin-bottom:16px;">
+<div style="font-family:'Noto Serif JP',serif;font-size:18px;font-weight:900;color:#ef4444;margin-bottom:4px;">心不全</div>
+<div style="font-size:12px;color:var(--txm);">左心不全・右心不全の症状・検査・治療・看護</div>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">📊 左心不全 vs 右心不全の症状</div>
+<table class="dt">
+<tr><th>左心不全（肺うっ血）</th><th>右心不全（体静脈うっ血）</th></tr>
+<tr><td><span style="color:#ef4444;font-weight:700;">呼吸困難・起座呼吸</span></td><td><span style="color:#3b82f6;font-weight:700;">下腿浮腫・全身浮腫</span></td></tr>
+<tr><td>ピンク色泡沫状痰（肺水腫）</td><td>頸静脈怒張</td></tr>
+<tr><td>肺雑音（ラ音）</td><td>肝腫大・腹水</td></tr>
+<tr><td>チアノーゼ</td><td>食欲不振・全身倦怠感</td></tr>
+</table>
+<div class="nb" style="margin-top:8px;">💡 覚え方：<strong>「左＝肺（呼吸困難）、右＝体（むくみ）」</strong></div>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">📏 NYHA重症度分類</div>
+<table class="dt">
+<tr><th>度</th><th>症状</th></tr>
+<tr><td><strong>I度</strong></td><td>身体活動の制限なし。日常生活で症状なし</td></tr>
+<tr><td><strong>II度</strong></td><td>軽度の活動制限。普通以上の活動で息切れ</td></tr>
+<tr><td><strong>III度</strong></td><td>高度の活動制限。軽い日常動作でも息切れ</td></tr>
+<tr><td><strong style="color:#ef4444;">IV度</strong></td><td><span style="color:#ef4444;font-weight:700;">安静時にも症状。最小限の活動で増悪</span>（最重症）</td></tr>
+</table>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">🔬 主要検査</div>
+<table class="dt">
+<tr><th>検査</th><th>基準値・判断</th><th>意義</th></tr>
+<tr><td><strong>BNP</strong></td><td>↑高いほど重症</td><td>心臓への負荷のマーカー</td></tr>
+<tr><td><strong>心胸郭比（CTR）</strong></td><td><span style="color:#ef4444;font-weight:700;">50%超＝心拡大</span></td><td>胸部X線で測定</td></tr>
+<tr><td><strong>SpO₂</strong></td><td>90%以下で呼吸不全</td><td>酸素化の指標</td></tr>
+</table>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">👩‍⚕️ 心不全の看護・生活指導</div>
+<table class="dt">
+<tr><th>項目</th><th>内容</th></tr>
+<tr><td><strong>体位</strong></td><td>急性左心不全→<span style="color:#ef4444;font-weight:700;">ファウラー位・起座位</span>（静脈還流↓→呼吸楽）</td></tr>
+<tr><td><strong>体重管理</strong></td><td>毎朝体重測定。<span style="color:#ef4444;font-weight:700;">1〜2日で2kg以上増加→医師へ連絡</span></td></tr>
+<tr><td><strong>塩分制限</strong></td><td>1日6g未満</td></tr>
+<tr><td><strong>水分管理</strong></td><td>1日1〜1.5L程度</td></tr>
+<tr><td><strong>ジゴキシン中毒</strong></td><td><span style="color:#ef4444;font-weight:700;">黄色視・悪心・不整脈</span>。低K血症で中毒リスク↑</td></tr>
+</table>
+</div>
+`},
+
+  { id:'ss4', unitId:'u04', label:'⚡ 不整脈', content:`
+<div style="margin-bottom:16px;">
+<div style="font-family:'Noto Serif JP',serif;font-size:18px;font-weight:900;color:#ef4444;margin-bottom:4px;">不整脈</div>
+<div style="font-size:12px;color:var(--txm);">心房細動・心室細動・房室ブロック・AED・BLS</div>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">📈 主要な不整脈 比較</div>
+<table class="dt">
+<tr><th>不整脈</th><th>心電図の特徴</th><th>最大のリスク</th><th>治療</th></tr>
+<tr><td><strong>心房細動（AF）</strong></td><td><span style="color:#ef4444;font-weight:700;">P波消失＋RR間隔不整</span>＋細動波</td><td><span style="color:#ef4444;font-weight:700;">脳塞栓症（脳梗塞）</span></td><td>抗凝固療法（ワルファリン等）</td></tr>
+<tr><td><strong>心室細動（VF）</strong></td><td>ぐちゃぐちゃな波形（QRS識別不能）</td><td><span style="color:#ef4444;font-weight:700;">心停止</span></td><td><span style="color:#ef4444;font-weight:700;">AED（電気的除細動）</span></td></tr>
+<tr><td><strong>完全房室ブロック</strong></td><td>P波とQRS波が別々のリズム</td><td>アダムス・ストークス症候群</td><td>ペースメーカー植え込み</td></tr>
+<tr><td><strong>モビッツII型</strong></td><td>前触れなくQRSが脱落</td><td>突然の心停止</td><td>ペースメーカー植え込み</td></tr>
+</table>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">🚨 BLS（一次救命処置）の手順</div>
+<div style="display:flex;flex-direction:column;gap:6px;">
+  <div style="background:rgba(239,68,68,.1);border-left:3px solid #ef4444;border-radius:0 6px 6px 0;padding:8px 12px;font-size:12px;"><strong style="color:#ef4444;">① 安全確認・反応確認・応援を呼ぶ</strong></div>
+  <div style="background:rgba(245,158,11,.1);border-left:3px solid #f59e0b;border-radius:0 6px 6px 0;padding:8px 12px;font-size:12px;"><strong style="color:#f59e0b;">② 119番通報・AED手配</strong></div>
+  <div style="background:rgba(59,130,246,.1);border-left:3px solid #3b82f6;border-radius:0 6px 6px 0;padding:8px 12px;font-size:12px;"><strong style="color:#3b82f6;">③ 胸骨圧迫：100〜120回/分・深さ約5cm（6cm超えない）</strong></div>
+  <div style="background:rgba(34,197,94,.1);border-left:3px solid #22c55e;border-radius:0 6px 6px 0;padding:8px 12px;font-size:12px;"><strong style="color:#22c55e;">④ AED装着→電気ショック→胸骨圧迫再開</strong></div>
+</div>
+<div class="nb w" style="margin-top:8px;">⚠️ AEDパッドの位置：<strong>右前胸部（鎖骨下）と左側胸部（脇の下）</strong>。心臓を挟むように！</div>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">🔋 ペースメーカー装着後の生活指導</div>
+<table class="dt">
+<tr><th>避けること</th><th>理由</th></tr>
+<tr><td><span style="color:#ef4444;">MRI検査</span></td><td>原則禁忌（強力な磁場の影響）</td></tr>
+<tr><td><span style="color:#ef4444;">電磁調理器</span></td><td>電磁波の影響で誤作動の可能性</td></tr>
+<tr><td><span style="color:#ef4444;">電子商品監視装置（防犯ゲート）</span></td><td>立ち止まらずに通過する</td></tr>
+</table>
+<div class="nb" style="margin-top:8px;">💡 社会資源：<strong>自立支援医療（更生医療）</strong>＝障害者総合支援法、<strong>身体障害者手帳</strong>＝身体障害者福祉法</div>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">💊 心不全の主要薬と目的（国試頻出）</div>
+<table class="dt">
+<tr><th>薬剤</th><th>主な目的</th><th>注意点</th></tr>
+<tr><td><strong>利尿薬（フロセミド）</strong></td><td><span style="color:#ef4444;font-weight:700;">循環血液量の減少→前負荷軽減</span></td><td>低K血症→不整脈リスク</td></tr>
+<tr><td><strong>ACE阻害薬・ARB</strong></td><td>末梢血管拡張→後負荷軽減・心保護</td><td>ACE阻害薬→空咳（10〜20%）</td></tr>
+<tr><td><strong>ジゴキシン</strong></td><td>強心作用（収縮力↑）・心拍数↓</td><td>TDM必須・低K血症で中毒↑</td></tr>
+<tr><td><strong>β遮断薬</strong></td><td>心拍数↓→心臓を休ませる</td><td>気管支喘息禁忌</td></tr>
+</table>
+<div class="nb w" style="margin-top:8px;">⚠️ 強心薬＋利尿薬の組み合わせ：<strong>低K血症→ジゴキシン中毒→不整脈</strong>の悪循環に注意（第114回出題）</div>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">🔍 浮腫の観察ポイント</div>
+<table class="dt">
+<tr><th>体位</th><th>最適な観察部位</th></tr>
+<tr><td>立位・座位</td><td><span style="color:#ef4444;font-weight:700;">下腿前面（脛骨前面）★</span></td></tr>
+<tr><td>臥床患者</td><td>仙骨部・背部</td></tr>
+</table>
+<div class="nb" style="margin-top:8px;">💡 圧痕性浮腫：指で10秒押して離した後にくぼみが残る＝陽性（第113回出題）</div>
+</div>
+<div style="margin-top:16px;padding-top:12px;border-top:1px solid var(--bd);">
+  <div style="font-size:11px;color:#ef4444;font-family:'DM Mono',monospace;letter-spacing:1px;margin-bottom:8px;">📊 図で確認</div>
+  <button class="fig-btn" onclick="openFigModal('shindenzu')" style="font-size:13px;padding:8px 18px;">⚡ 心電図5パターンを見る（正常・AF・VF・ST変化・房室ブロック）</button>
+</div>
+`},
+
+  { id:'ss5', unitId:'u05', label:'💔 狭心症・心筋梗塞', content:`
+<div style="margin-bottom:16px;">
+<div style="font-family:'Noto Serif JP',serif;font-size:18px;font-weight:900;color:#ef4444;margin-bottom:4px;">狭心症・心筋梗塞</div>
+<div style="font-size:12px;color:var(--txm);">病態の違い・心電図・検査・治療・MONA・リハビリ</div>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">⚖️ 狭心症 vs 心筋梗塞</div>
+<table class="dt">
+<tr><th>項目</th><th>狭心症</th><th>心筋梗塞</th></tr>
+<tr><td>病態</td><td>冠動脈の<strong>狭窄</strong>（一時的虚血）</td><td>冠動脈の<strong>完全閉塞</strong>（持続虚血）</td></tr>
+<tr><td>心筋壊死</td><td><span style="color:#22c55e;font-weight:700;">なし</span></td><td><span style="color:#ef4444;font-weight:700;">あり（20分以上で始まる）</span></td></tr>
+<tr><td>痛みの持続</td><td>数分〜20分未満</td><td><span style="color:#ef4444;font-weight:700;">20分以上持続</span></td></tr>
+<tr><td>心電図</td><td><span style="color:#f59e0b;font-weight:700;">ST低下</span></td><td><span style="color:#ef4444;font-weight:700;">ST上昇→異常Q波</span></td></tr>
+<tr><td>血液検査</td><td>変化なし</td><td><span style="color:#ef4444;font-weight:700;">CK・トロポニンT上昇</span></td></tr>
+<tr><td>ニトログリセリン</td><td>有効</td><td>効果限定的</td></tr>
+</table>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">💊 主な治療薬</div>
+<table class="dt">
+<tr><th>薬剤</th><th>投与方法</th><th>注意点</th></tr>
+<tr><td><strong>ニトログリセリン</strong></td><td><span style="color:#ef4444;font-weight:700;">舌下投与</span>（内服×→初回通過効果で失活）</td><td>血圧低下・ふらつきに注意</td></tr>
+<tr><td><strong>アスピリン</strong></td><td>経口</td><td>抗血小板薬。血栓予防</td></tr>
+<tr><td><strong>Ca拮抗薬</strong></td><td>経口</td><td>冠攣縮性狭心症に有効</td></tr>
+<tr><td><strong>β遮断薬</strong></td><td>経口</td><td>心拍数↓→心臓を休ませる</td></tr>
+</table>
+<div class="nb" style="margin-top:8px;">💡 <strong>MONA</strong>（急性心筋梗塞の初期対応）：<strong>M</strong>orohine（鎮痛）・<strong>O</strong>xygen（酸素）・<strong>N</strong>itroglycerine（血管拡張）・<strong>A</strong>spirin（抗血小板）</div>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">🔬 冠動脈造影後の看護（カテーテル検査）</div>
+<table class="dt">
+<tr><th>穿刺部位</th><th>安静時間</th><th>入浴制限</th></tr>
+<tr><td>橈骨動脈</td><td>2〜4時間</td><td>翌日〜</td></tr>
+<tr><td>上腕動脈</td><td>4〜6時間</td><td>48時間〜</td></tr>
+<tr><td><strong style="color:#ef4444;">大腿動脈</strong></td><td><strong style="color:#ef4444;">6〜8時間（最長）</strong></td><td>72時間〜</td></tr>
+</table>
+<div class="nb w" style="margin-top:8px;">⚠️ 検査後は穿刺部より末梢の<strong>動脈拍動・しびれ・麻痺</strong>を観察する</div>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">🏃 心臓リハビリテーション</div>
+<table class="dt">
+<tr><th>進め方</th><th>中止基準</th></tr>
+<tr><td>立位 → 歩行 → 階段昇降（段階的に拡大）</td><td>心拍数<strong>120回/分以上</strong><br>収縮期血圧<strong>180mmHg以上</strong><br>中等度の呼吸困難・胸痛・めまい</td></tr>
+</table>
+<div class="nb" style="margin-top:8px;">💡 再発予防の食事指導：塩分<strong>1日6g未満</strong>・飽和脂肪酸（牛肉等）↓・魚（DHA/EPA）↑・禁煙</div>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">🩻 大動脈解離（スタンフォード分類）</div>
+<table class="dt">
+<tr><th>分類</th><th>部位</th><th>治療方針</th></tr>
+<tr><td><strong style="color:#ef4444;">A型</strong></td><td>上行大動脈を含む</td><td><span style="color:#ef4444;font-weight:700;">緊急手術★</span>（破裂・心タンポナーデリスク）</td></tr>
+<tr><td><strong>B型</strong></td><td>上行大動脈を含まない</td><td>薬物療法（降圧・安静）が原則</td></tr>
+</table>
+<div class="nb w" style="margin-top:8px;">⚠️ 手術前の看護：<strong>厳重な血圧管理（収縮期100〜120mmHg目標）＋絶対安静</strong>（第114回出題）</div>
+</div>
+
+<div class="card">
+<div style="font-size:13px;font-weight:700;color:#ef4444;margin-bottom:10px;">🏃 心臓リハビリの運動強度目安</div>
+<table class="dt">
+<tr><th>適切な強度</th><th>中止基準</th></tr>
+<tr><td><span style="color:#22c55e;font-weight:700;">少し息が切れるが笑顔で会話できる程度</span><br><small>（Borg指数11〜13）</small></td><td>心拍数<strong>120回/分以上</strong><br>収縮期血圧<strong>180mmHg以上</strong><br>胸痛・めまい・中等度の呼吸困難</td></tr>
+</table>
+<div class="nb" style="margin-top:8px;">💡 段階：立位→歩行→階段昇降。「会話テスト」が簡便な強度確認法（第113回出題）</div>
+</div>
+`},,
+
+  // ── u03 心不全 追加 ──
+  {id:'q311',unit:'u03',cat:'心不全',
+   q:'心不全の前負荷を増加させる主な原因はどれか。',
+   c:['循環血液量の減少','塩分・水分の過剰摂取や輸液過多','末梢血管抵抗の低下','心拍数の減少'],a:1,
+   e:'前負荷＝心臓に戻る血液量（静脈還流量）。塩分・水分過多→循環血液量増加→前負荷増大→心臓への負担増大。心不全患者に塩分6g未満・水分制限を指導する根本的な理由。'},
+  {id:'q312',unit:'u03',cat:'心不全',
+   q:'左心不全で起坐呼吸（座位が楽）になる理由として正しいのはどれか。',
+   c:['座位では心拍数が上昇するため','座位では静脈還流量が減少し肺うっ血が軽減するため','座位では横隔膜が下がり肺活量が増えるため','座位では気管支が拡張するため'],a:1,
+   e:'臥位では下肢・腹部の静脈血が心臓に戻りやすくなり肺うっ血が悪化→呼吸困難増強。座位・起座位では静脈還流量が減り肺うっ血が軽減→呼吸が楽になる。急性左心不全ではファウラー位・起座位が最優先の体位管理。'},
+  {id:'q313',unit:'u03',cat:'心不全',
+   q:'慢性心不全患者に対するセルフモニタリングとして適切でないのはどれか。',
+   c:['毎朝同じ条件で体重測定を行う','脈拍・血圧を定期的に測定する','1〜2日で2kg以上体重が増えたら医師に連絡する','むくみが出ても水分は制限しなくてよい'],a:3,
+   e:'むくみは水分・塩分の蓄積によるうっ血のサイン。水分制限（1日1〜1.5L程度）と塩分制限（6g未満）は継続が必要。「むくみが出ても制限しなくてよい」は誤り。体重増加・浮腫は悪化の早期サイン。'},
+  {id:'q314',unit:'u03',cat:'心不全',
+   q:'心不全患者に対するワクチン接種の推奨として正しいのはどれか。',
+   c:['心不全患者にワクチンは禁忌である','インフルエンザワクチン・肺炎球菌ワクチンの接種が推奨される','ワクチンの有効性は心不全患者には認められない','接種は入院中のみ可能である'],a:1,
+   e:'心不全患者はインフルエンザ・肺炎球菌感染症で急性増悪のリスクが高い。インフルエンザワクチン（毎年）と肺炎球菌ワクチンの接種が強く推奨される。感染症予防は心不全管理の重要な柱の一つ。'},
+
+  // ── u04 不整脈 追加 ──
+  {id:'q411',unit:'u04',cat:'不整脈',
+   q:'心室細動に対してAEDを使用する際の正しい手順はどれか。',
+   c:['AEDのパッドを貼る→電源オン→ショックボタンを押す','電源オン→音声ガイドに従いパッドを貼る→周囲の安全確認後にショック','まず胸骨圧迫を5分行ってからAEDを使用する','AEDは医療従事者のみ使用できる'],a:1,
+   e:'AEDは電源オン→音声ガイドに従いパッドを貼る→心電図解析（触れない）→周囲の安全確認→ショックボタン→直ちに胸骨圧迫再開の順。AEDは一般市民も使用可能。1分でも早い除細動が救命率を高める。'},
+  {id:'q412',unit:'u04',cat:'不整脈',
+   q:'洞房結節の機能が低下した際に起こる状態はどれか。',
+   c:['心拍数が増加し頻脈になる','徐脈になり、下位の刺激伝導系が代替のペースメーカーとなる','P波が消失し心房細動になる','QRS波が広くなる'],a:1,
+   e:'洞房結節は正常のペースメーカー（60〜100回/分）。機能低下→徐脈。下位の房室結節（40〜60回/分）やヒス束・プルキンエ線維（20〜40回/分）が代替ペースメーカーとなるが心拍数は遅い。重症ではペースメーカー植え込みが必要。'},
+  {id:'q413',unit:'u04',cat:'不整脈',
+   q:'ワルファリン服用中の心房細動患者で定期的に確認すべき検査値はどれか。',
+   c:['APTT','PT-INR','トロポニンT','BNP'],a:1,
+   e:'ワルファリンの効果はPT-INR（目標2.0〜3.0）でモニタリング。低すぎると血栓リスク↑、高すぎると出血リスク↑。APTTはヘパリンの指標。心房細動→血栓予防→ワルファリン→PT-INRの流れを一連で覚える。'},
+
+  // ── u01 心臓の構造 追加 ──
+  {id:'q109',unit:'u01',cat:'体循環・肺循環',
+   q:'固有心筋の特徴として正しいのはどれか。',
+   c:['意識的に収縮を制御できる','自動能（自ら電気刺激を発生する能力）を持つ','骨格筋と同じ構造である','疲労しやすい'],a:1,
+   e:'固有心筋（心筋）は自動能を持ち、神経からの指令がなくても自ら電気刺激を発生して収縮できる。随意的に制御できない不随意筋。疲労しにくい構造（ミトコンドリアが豊富）。洞房結節の自動能が最も強く正常ペースメーカーとして機能する。'},
+  {id:'q110',unit:'u01',cat:'体循環・肺循環',
+   q:'正常な心臓で心拍出量が減少するのはどれか。',
+   c:['1回拍出量の増加','静脈還流量の増加','心筋収縮力の低下','交感神経の緊張'],a:2,
+   e:'心拍出量＝1回拍出量×心拍数。心筋収縮力の低下→1回拍出量減少→心拍出量減少。交感神経緊張・静脈還流量増加・1回拍出量増加はいずれも心拍出量を増加させる。心不全では心筋収縮力の低下が心拍出量減少の主因。'},
+
+  // ── u05 狭心症・心筋梗塞 追加 ──
+  {id:'q511',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'経皮的冠動脈形成術（PCI）の説明として正しいのはどれか。',
+   c:['胸を開いて直接心臓を手術する','カテーテルでバルーンやステントを使い血管を内側から広げる','薬で血栓を溶かす治療法である','冠動脈の迂回路（バイパス）を新たに作る手術である'],a:1,
+   e:'PCIはカテーテルを冠動脈に挿入し、バルーンで狭窄部を拡張した後ステント（金属の網）を留置して血管を広げる。開胸不要で侵襲が小さい。CABGは別の血管でバイパスを作る開胸手術。t-PAは血栓溶解薬。'},
+  {id:'q512',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'急性心筋梗塞後の患者が退院する際の生活指導で誤っているのはどれか。',
+   c:['禁煙を強く勧める','食後すぐに入浴しても構わない','脂質の多い食事を控え魚を積極的に摂る','定期的な外来受診と服薬継続を指導する'],a:1,
+   e:'食後は消化のために血液が消化器系に集中し、心臓への負担が増す。食後すぐの入浴は心臓への二重負荷になるため禁忌。食後少なくとも1時間は安静にしてから入浴。40度以下のぬるめのお湯・半身浴が推奨される。'},
+,
+
+  // ── 111回・112回 過去問ベース追加問題 ──
+
+  // u01 心臓の構造
+  {id:'q111',unit:'u01',cat:'体循環・肺循環',
+   q:'心臓の拍動に関与する特殊心筋でペースメーカーの役割を担うのはどれか。',
+   c:['房室結節','洞房結節','ヒス束','プルキンエ線維'],a:1,
+   e:'洞房結節（どうぼうけっせつ）は右心房の上部にあり、心臓全体の電気刺激の出発点（ペースメーカー）。正常では60〜100回/分のリズムで発火する。「洞房→房室→ヒス→プルキンエ」の順で興奮が伝わる。'},
+
+  {id:'q112',unit:'u01',cat:'体循環・肺循環',
+   q:'心臓の拍動に伴う心音のうち、第Ⅰ音の原因となるのはどれか。',
+   c:['房室弁の閉鎖','房室弁の開放','半月弁の閉鎖','半月弁の開放'],a:0,
+   e:'第Ⅰ音（ドッ）＝収縮開始時の房室弁（僧帽弁・三尖弁）の閉鎖音。第Ⅱ音（クン）＝収縮終了時の半月弁（大動脈弁・肺動脈弁）の閉鎖音。「Ⅰ音=房室弁閉鎖、Ⅱ音=半月弁閉鎖」で覚える。'},
+
+  {id:'q113',unit:'u01',cat:'体循環・肺循環',
+   q:'心筋の収縮力を高めるのはどれか。',
+   c:['副交感神経の興奮','アドレナリンの分泌','血液中のカリウムイオン濃度の増加','血液中のアセチルコリン濃度の増加'],a:1,
+   e:'アドレナリン（副腎髄質から分泌）は交感神経系を介して心筋の収縮力を増強し心拍数も増加させる。副交感神経・アセチルコリンは心拍数を低下させる。高K血症は心筋の興奮性を低下させ不整脈リスク↑。'},
+
+  // u02 高血圧の治療薬
+  {id:'q201',unit:'u02',cat:'高血圧の治療薬',
+   q:'高血圧症の患者に推奨される1日の食塩摂取量はどれか。',
+   c:['6g未満','8g未満','10g未満','12g未満'],a:0,
+   e:'高血圧・心不全・腎疾患患者の食塩摂取目標は1日6g未満。塩分→Na再吸収→循環血液量↑→血圧↑の悪循環を断つ。日本人の平均摂取量は約10g/日なので約4g減らす意識が必要。国試頻出の数値。'},
+
+  {id:'q202',unit:'u02',cat:'高血圧の治療薬',
+   q:'ワルファリン内服患者が摂取を避けるべき食品はどれか。',
+   c:['海藻','牛乳','納豆','グレープフルーツ'],a:2,
+   e:'納豆はビタミンKが極めて豊富で、ワルファリンの抗凝固効果を著しく減弱させる→完全禁止。緑黄色野菜は急増減を避け量を一定に保つよう指導。グレープフルーツはCa拮抗薬との相互作用に注意。'},
+
+  // u03 心不全
+  {id:'q315',unit:'u03',cat:'心不全',
+   q:'心不全患者に投与されるジギタリス製剤の主な作用はどれか。',
+   c:['利尿作用','血管拡張作用','強心作用','抗不整脈作用'],a:2,
+   e:'ジゴキシン（ジギタリス製剤）の主な作用は強心作用（心筋収縮力の増強）。加えて心拍数を遅くする作用（陰性変時作用）もある。TDM必須・低K血症で中毒リスク↑・黄色視が特徴的中毒症状。'},
+
+  {id:'q316',unit:'u03',cat:'心不全',
+   q:'急性心不全（肺うっ血）患者の入院時の体位で適切なのはどれか。',
+   c:['仰臥位','側臥位','起坐位','伏臥位'],a:2,
+   e:'急性左心不全（肺うっ血）では起坐位（座位）が第一選択の体位。座位にすることで静脈還流量が減少→肺うっ血が軽減→呼吸困難が改善する。仰臥位・伏臥位では静脈還流量が増加し症状が悪化する。'},
+
+  {id:'q317',unit:'u03',cat:'心不全',
+   q:'心不全の悪化を判断する指標として最も適切なのはどれか。',
+   c:['視力低下','体重増加','関節可動域の制限','皮膚の落屑'],a:1,
+   e:'心不全悪化時は体内に水分が貯留し体重が増加する。1〜2日で2kg以上の体重増加は心不全悪化の早期サイン→医師に連絡。毎朝同じ条件（起床後・排尿後・食前）で体重測定が重要な自己管理。'},
+
+  {id:'q318',unit:'u03',cat:'心不全',
+   q:'心不全患者に利尿薬（フロセミド）を投与した際、看護師が最優先で観察すべき項目はどれか。',
+   c:['皮膚の乾燥','尿量','視力の変化','聴力の変化'],a:1,
+   e:'利尿薬投与後は尿量を最優先で確認する。利尿効果が得られているか（適切な尿量）、過剰な利尿による脱水・低血圧がないかを評価。また低K血症による不整脈リスクにも注意が必要。'},
+
+  // u04 不整脈
+  {id:'q414',unit:'u04',cat:'不整脈',
+   q:'成人の心肺蘇生における胸骨圧迫の深さで適切なのはどれか。',
+   c:['約3cm','約5cm','約7cm','約9cm'],a:1,
+   e:'胸骨圧迫の深さは約5cm（6cmを超えない）、速さは100〜120回/分。第112回国試でも出題。「5センチ・120回」の数字は国試最頻出のBLS問題。圧迫後は胸郭が完全に戻ることも重要。'},
+
+  {id:'q415',unit:'u04',cat:'不整脈',
+   q:'安静時の成人の心拍数で徐脈とされるのはどれか。',
+   c:['40/分未満','60/分未満','80/分未満','100/分未満'],a:1,
+   e:'徐脈＝心拍数60/分未満。頻脈＝100/分超。正常範囲60〜100/分。徐脈の原因：完全房室ブロック・洞不全症候群・迷走神経反射など。重症の徐脈（アダムス・ストークス症候群）ではペースメーカーが必要。'},
+
+  // u05 狭心症・心筋梗塞
+  {id:'q513',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'左前胸部から頸部や左上肢への放散痛が生じる疾患はどれか。',
+   c:['胃潰瘍','狭心症','胆石症','尿管結石症'],a:1,
+   e:'狭心症・心筋梗塞では冠動脈虚血による痛みが脊髄レベルで同じ神経に合流する体性神経と混同され、左肩・頸部・左上肢・胃部などに放散痛（関連痛）として現れる。「胸痛なしの放散痛のみ」の場合も見逃さないこと。'},
+
+  {id:'q514',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'急性心筋梗塞後のPCI（経皮的冠動脈形成術）施行後の看護で最初に確認すべきことはどれか。',
+   c:['側臥位にする','除細動器の準備','穿刺部の出血の有無を確認','鎮痛薬の処方を医師に相談'],a:2,
+   e:'PCI後の帰室時は穿刺部（大腿動脈・橈骨動脈など）の出血・血腫を最初に確認。血圧低下・頻脈・穿刺部の膨隆・疼痛に注意。穿刺部末梢の動脈拍動・しびれ・麻痺も観察する。第111回国試で出題。'},
+
+  {id:'q515',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'急性心筋梗塞の血液検査で最も優先度の高い項目はどれか。',
+   c:['トロポニンT','乳酸脱水素酵素（LDH）','血清クレアチニン','AST（GOT）'],a:0,
+   e:'トロポニンTは心筋特異性が最も高いマーカー。発症後3〜4時間で上昇し始め、診断感度・特異度ともに高い。LDH・ASTも上昇するが特異性が低い。CKも早期マーカーとして有用。第111回国試で出題。'},
+,
+
+  // ── 113回・114回 過去問ベース追加問題 ──
+
+  // u01 心臓の構造
+  {id:'q114',unit:'u01',cat:'体循環・肺循環',
+   q:'心臓の拍動に伴う心音のうち、第Ⅱ音の原因となるのはどれか。',
+   c:['房室弁の閉鎖','房室弁の開放','半月弁の閉鎖','半月弁の開放'],a:2,
+   e:'第Ⅱ音（クン）＝心室収縮終了時の半月弁（大動脈弁・肺動脈弁）の閉鎖音。第Ⅰ音（ドッ）＝房室弁の閉鎖音。「Ⅰ音=房室弁閉鎖（収縮始め）、Ⅱ音=半月弁閉鎖（収縮終わり）」の対比で覚える。第113・114回で出題。'},
+
+  {id:'q115',unit:'u01',cat:'体循環・肺循環',
+   q:'興奮を心室全体に伝える刺激伝導系の構成要素はどれか。',
+   c:['房室結節','洞結節','ヒス束','プルキンエ線維'],a:3,
+   e:'プルキンエ線維は心室の心筋全体に枝分かれして電気刺激を伝える。洞房結節（ペースメーカー）→房室結節→ヒス束→左右脚→プルキンエ線維→心室筋収縮の順。第114回で出題。'},
+
+  {id:'q116',unit:'u01',cat:'体循環・肺循環',
+   q:'安静時の成人の心拍数で頻脈とされるのはどれか。',
+   c:['60/分以上','80/分以上','100/分以上','120/分以上'],a:2,
+   e:'頻脈＝心拍数100/分超。徐脈＝60/分未満。正常範囲60〜100/分。頻脈の原因：発熱・貧血・脱水・甲状腺機能亢進症・ショックの代償反応など。第113回午前で出題。'},
+
+  {id:'q117',unit:'u01',cat:'体循環・肺循環',
+   q:'血圧を上昇させる要因はどれか。',
+   c:['心拍出量の減少','末梢血管抵抗の増大','循環血液量の減少','血液粘稠度の低下'],a:1,
+   e:'血圧＝心拍出量×末梢血管抵抗。末梢血管抵抗の増大→血圧上昇。心拍出量増加・循環血液量増加・血液粘稠度上昇でも血圧は上がる。第114回午前で出題。加齢→血管弾力性低下→末梢抵抗増大→収縮期血圧上昇。'},
+
+  // u02 高血圧の治療薬
+  {id:'q203',unit:'u02',cat:'高血圧の治療薬',
+   q:'カルシウム拮抗薬の主な降圧作用はどれか。',
+   c:['心拍数の増加','血管の拡張','血液量の増加','尿量の減少'],a:1,
+   e:'Ca拮抗薬は血管平滑筋のCaチャネルをブロックし血管を拡張→末梢血管抵抗低下→降圧。代表薬：アムロジピン・ニフェジピン。グレープフルーツ禁忌（CYP3A4阻害）。副作用：下肢浮腫・歯肉肥厚。第114回午後で出題。'},
+
+  // u03 心不全
+  {id:'q319',unit:'u03',cat:'心不全',
+   q:'心不全患者に利尿薬を使用する主な目的はどれか。',
+   c:['血圧の上昇','心拍数の増加','循環血液量の減少','心筋収縮力の抑制'],a:2,
+   e:'利尿薬（フロセミド等）は腎臓でのNa・水の再吸収を抑制→尿量増加→循環血液量減少→心臓への前負荷軽減→肺うっ血・浮腫の改善。塩分制限と組み合わせることでより効果的。第113回午前で出題。'},
+
+  {id:'q320',unit:'u03',cat:'心不全',
+   q:'心不全患者への強心薬・利尿薬投与時に特に注意すべき副作用はどれか。',
+   c:['不整脈','食欲不振','皮膚の掻痒感','関節痛'],a:0,
+   e:'強心薬（ジゴキシン）は有効域が狭くTDM必須。低K血症（利尿薬の副作用）がジゴキシン中毒のリスクを高め不整脈を誘発する。利尿薬→低K→ジゴキシン中毒→不整脈の悪循環に注意。第114回午後で出題。'},
+
+  {id:'q321',unit:'u03',cat:'心不全',
+   q:'心不全患者の退院指導として適切なのはどれか。',
+   c:['水分を積極的に多く摂る','毎日決まった時間に体重を量る','塩分は1日10gを目標にする','息切れがしても運動を続ける'],a:1,
+   e:'毎朝決まった時間（起床後・排尿後）に体重測定→1〜2日で2kg以上増加で受診。水分制限（1日1〜1.5L）・塩分6g未満が基本。息切れが出たら直ちに休む。第113回状況設定で出題。'},
+
+  {id:'q322',unit:'u03',cat:'心不全',
+   q:'心不全患者で体重が1週間で3kg増加し夜間咳が出現した場合に考えられるのはどれか。',
+   c:['感染症の併発','心不全の増悪','腎機能の改善','栄養状態の向上'],a:1,
+   e:'体重増加（水分貯留）＋夜間咳（臥位での肺うっ血悪化）は心不全増悪の典型的サイン。「2kg以上増加→受診」の指導があるが今回は3kg増加で受診。夜間の起座呼吸・咳も肺うっ血増悪を示す。第113回で出題。'},
+
+  {id:'q323',unit:'u03',cat:'心不全',
+   q:'右心不全でみられる症状として正しいのはどれか。2つ選べ（1つ選ぶとすれば）',
+   c:['肺うっ血','肝腫大','起坐呼吸','ピンク色泡沫痰'],a:1,
+   e:'右心不全は体静脈系のうっ血→肝腫大・頸静脈怒張・下腿浮腫・腹水。肺うっ血・起坐呼吸・ピンク色泡沫痰は左心不全の症状。「右＝体（肝腫大・浮腫）、左＝肺（呼吸困難）」の対比を必ず覚える。第113回で出題。'},
+
+  {id:'q324',unit:'u03',cat:'心不全',
+   q:'心不全患者の浮腫の観察部位として最も適切なのはどれか。',
+   c:['頭頂部','前腕部','下腿前面（脛骨前面）','手のひら'],a:2,
+   e:'浮腫は重力の影響を受け下部に貯留しやすい。立位・座位では下腿前面（脛骨前面）が最も観察しやすい。臥床患者では仙骨部・背部を観察する。指で10秒押して離した後にくぼみが残る（圧痕性浮腫）が陽性所見。第113回で出題。'},
+
+  // u04 不整脈
+  {id:'q416',unit:'u04',cat:'不整脈',
+   q:'成人の心肺蘇生において、胸骨圧迫と人工呼吸の回数比として正しいのはどれか。',
+   c:['15：2','30：2','15：1','30：1'],a:1,
+   e:'BLS（一次救命処置）では胸骨圧迫30回：人工呼吸2回の比率（30:2）で実施。AEDがある場合はできる限り早くAEDを使用する。人工呼吸ができない場合は胸骨圧迫のみ（ハンズオンリーCPR）も有効。第113回で出題。'},
+
+  {id:'q417',unit:'u04',cat:'不整脈',
+   q:'不整脈のなかで最も緊急性が高く直ちに除細動が必要なのはどれか。',
+   c:['心房細動','期外収縮','心室細動','洞性頻脈'],a:2,
+   e:'心室細動は心室が無秩序に痙攣し心臓がポンプ機能を失う＝心停止。直ちにAEDで電気的除細動が必要。心房細動は緊急性は低いが脳塞栓症リスク。期外収縮・洞性頻脈は通常は緊急性なし。第114回で出題。'},
+
+  // u05 狭心症・心筋梗塞
+  {id:'q516',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'ニトログリセリン舌下投与後に最も注意すべき副作用はどれか。',
+   c:['高血圧','血圧低下','徐脈','浮腫'],a:1,
+   e:'ニトログリセリンは血管拡張→血圧低下（ふらつき・失神）が最大の副作用。投与後は座位か臥位をとらせる。立位での投与は転倒リスクがある。3〜5分で効果なければ再投与（最大3回まで）し医療機関受診を。第113回で出題。'},
+
+  {id:'q517',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'急性心筋梗塞患者に優先して行う対応として適切なのはどれか。',
+   c:['抗菌薬の投与','酸素吸入の開始','緩下薬の投与','降圧薬の投与'],a:1,
+   e:'急性心筋梗塞ではまず酸素投与（SpO₂低下時）が優先。MONAに従いM（モルヒネ）・O（酸素）・N（ニトログリセリン）・A（アスピリン）で対応。ST上昇→緊急PCI（または血栓溶解療法）が根本治療。第113回で出題。'},
+
+  {id:'q518',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'心臓リハビリテーションの運動強度の目安として適切なのはどれか。',
+   c:['全力で走れる程度','少し息が切れるが笑顔で会話できる程度','心拍数が全く変わらない程度','胸痛が出るまで追い込む程度'],a:1,
+   e:'心リハの適切な運動強度：「少し息が切れるが会話ができる程度（Borg指数11〜13）」が目安。心拍数120回/分以上・収縮期血圧180mmHg以上・胸痛・めまい・中等度の呼吸困難で即中止。第113回で出題。'},
+
+  {id:'q519',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'スタンフォード分類A型急性大動脈解離の治療方針として適切なのはどれか。',
+   c:['経過観察','緊急手術','運動療法の開始','抗菌薬の投与'],a:1,
+   e:'大動脈解離のスタンフォード分類：A型＝上行大動脈が解離に含まれる→緊急手術が原則（破裂・心タンポナーデのリスク）。B型＝上行大動脈を含まない→まず薬物療法（降圧・安静）。第114回で出題。'},
+
+  {id:'q520',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'大動脈解離患者の手術までの間に優先される看護はどれか。',
+   c:['食事摂取の勧奨','厳重な血圧管理と安静','早期離床の促進','呼吸筋訓練の実施'],a:1,
+   e:'大動脈解離は血圧上昇→解離の拡大・破裂リスク↑。手術前は絶対安静＋降圧療法（収縮期血圧100〜120mmHg目標）が最優先。痛みの管理・血圧の厳重モニタリングが看護の核心。第114回で出題。'},
+,
+
+  // ── 113回・114回 過去問ベース追加問題 ──
+  {id:'q114',unit:'u01',cat:'体循環・肺循環',
+   q:'心臓の拍動に伴う心音のうち、第Ⅱ音の原因となるのはどれか。',
+   c:['房室弁の閉鎖','房室弁の開放','半月弁の閉鎖','半月弁の開放'],a:2,
+   e:'第Ⅱ音（クン）は心室収縮終了時の半月弁（大動脈弁・肺動脈弁）の閉鎖音。第Ⅰ音は房室弁の閉鎖音。「Ⅰ音=房室弁閉鎖（収縮始め）、Ⅱ音=半月弁閉鎖（収縮終わり）」の対比で覚える。'},
+  {id:'q115',unit:'u01',cat:'体循環・肺循環',
+   q:'興奮を心室全体に伝える刺激伝導系の構成要素はどれか。',
+   c:['房室結節','洞結節','ヒス束','プルキンエ線維'],a:3,
+   e:'プルキンエ線維は心室の心筋全体に枝分かれして電気刺激を伝える。洞房結節→房室結節→ヒス束→左右脚→プルキンエ線維→心室筋収縮の順。第114回で出題。'},
+  {id:'q116',unit:'u01',cat:'体循環・肺循環',
+   q:'安静時の成人の心拍数で頻脈とされるのはどれか。',
+   c:['60/分以上','80/分以上','100/分以上','120/分以上'],a:2,
+   e:'頻脈＝心拍数100/分超。徐脈＝60/分未満。正常範囲60〜100/分。頻脈の原因：発熱・貧血・脱水・甲状腺機能亢進・ショックの代償反応など。第113回午前で出題。'},
+  {id:'q117',unit:'u01',cat:'体循環・肺循環',
+   q:'血圧を上昇させる要因はどれか。',
+   c:['心拍出量の減少','末梢血管抵抗の増大','循環血液量の減少','血液粘稠度の低下'],a:1,
+   e:'血圧＝心拍出量×末梢血管抵抗。末梢血管抵抗の増大→血圧上昇。加齢→血管弾力性低下→末梢抵抗増大→収縮期血圧上昇。心拍出量増加・循環血液量増加でも血圧は上がる。第114回午前で出題。'},
+  {id:'q203',unit:'u02',cat:'高血圧の治療薬',
+   q:'カルシウム拮抗薬の主な降圧作用はどれか。',
+   c:['心拍数の増加','血管の拡張','血液量の増加','尿量の減少'],a:1,
+   e:'Ca拮抗薬は血管平滑筋のCaチャネルをブロックし血管を拡張→末梢血管抵抗低下→降圧。代表薬：アムロジピン・ニフェジピン。グレープフルーツ禁忌（CYP3A4阻害）。副作用：下肢浮腫・歯肉肥厚。第114回で出題。'},
+  {id:'q319',unit:'u03',cat:'心不全',
+   q:'心不全患者に利尿薬を使用する主な目的はどれか。',
+   c:['血圧の上昇','心拍数の増加','循環血液量の減少','心筋収縮力の抑制'],a:2,
+   e:'利尿薬（フロセミド等）はNa・水の再吸収を抑制→尿量増加→循環血液量減少→心臓への前負荷軽減→肺うっ血・浮腫の改善。塩分制限と組み合わせることでより効果的。第113回午前で出題。'},
+  {id:'q320',unit:'u03',cat:'心不全',
+   q:'心不全患者への強心薬・利尿薬投与時に特に注意すべき副作用はどれか。',
+   c:['不整脈','食欲不振','皮膚の掻痒感','関節痛'],a:0,
+   e:'強心薬（ジゴキシン）は有効域が狭くTDM必須。利尿薬→低K血症→ジゴキシン中毒リスク↑→不整脈を誘発。低Kとジゴキシンの組み合わせは危険。電解質（特にK値）のモニタリングが重要。第114回で出題。'},
+  {id:'q321',unit:'u03',cat:'心不全',
+   q:'心不全患者の退院指導として適切なのはどれか。',
+   c:['水分を積極的に多く摂る','毎日決まった時間に体重を量る','塩分は1日10gを目標にする','息切れがしても運動を続ける'],a:1,
+   e:'毎朝決まった時間（起床後・排尿後・食前）に体重測定し記録→1〜2日で2kg以上増加で受診。水分制限（1日1〜1.5L）・塩分6g未満が基本。息切れ出現時は即休息。第113回状況設定で出題。'},
+  {id:'q322',unit:'u03',cat:'心不全',
+   q:'心不全患者で体重が1週間で3kg増加し夜間咳が出現した。考えられるのはどれか。',
+   c:['感染症の併発','心不全の増悪','腎機能の改善','栄養状態の向上'],a:1,
+   e:'体重増加（水分貯留）＋夜間咳（臥位での肺うっ血悪化による）は心不全増悪の典型的サイン。「2kg以上増加→受診」の指導があるが3kg増加で受診は正解。夜間の咳・起座呼吸も肺うっ血増悪を示す。第113回で出題。'},
+  {id:'q323',unit:'u03',cat:'心不全',
+   q:'右心不全でみられる症状はどれか。',
+   c:['肺うっ血','肝腫大','起坐呼吸','ピンク色泡沫痰'],a:1,
+   e:'右心不全は体静脈系のうっ血→肝腫大・頸静脈怒張・下腿浮腫・腹水。肺うっ血・起坐呼吸・ピンク色泡沫痰は左心不全の症状。「右＝体（肝腫大・浮腫）、左＝肺（呼吸困難）」の対比を必ず覚える。第113回で出題。'},
+  {id:'q324',unit:'u03',cat:'心不全',
+   q:'心不全患者の浮腫の観察部位として最も適切なのはどれか。',
+   c:['頭頂部','前腕部','下腿前面（脛骨前面）','手のひら'],a:2,
+   e:'浮腫は重力の影響で下部に貯留。立位・座位では下腿前面（脛骨前面）が最も観察しやすい。臥床患者では仙骨部・背部を観察する。指で10秒押して離した後にくぼみが残る圧痕性浮腫が陽性所見。第113回で出題。'},
+  {id:'q416',unit:'u04',cat:'不整脈',
+   q:'成人の心肺蘇生において胸骨圧迫と人工呼吸の回数比として正しいのはどれか。',
+   c:['15：2','30：2','15：1','30：1'],a:1,
+   e:'BLSでは胸骨圧迫30回：人工呼吸2回（30:2）。AEDがある場合は早期使用を優先。人工呼吸ができない場合は胸骨圧迫のみ（ハンズオンリーCPR）も有効。第113回で出題。'},
+  {id:'q417',unit:'u04',cat:'不整脈',
+   q:'不整脈のなかで最も緊急性が高く直ちに除細動が必要なのはどれか。',
+   c:['心房細動','期外収縮','心室細動','洞性頻脈'],a:2,
+   e:'心室細動は心室が無秩序に痙攣し心臓がポンプ機能を失う＝心停止。直ちにAEDで電気的除細動が必要。心房細動は脳塞栓リスクはあるが緊急度は低い。期外収縮・洞性頻脈は通常緊急性なし。第114回で出題。'},
+  {id:'q516',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'ニトログリセリン舌下投与後に最も注意すべき副作用はどれか。',
+   c:['高血圧','血圧低下','徐脈','浮腫'],a:1,
+   e:'ニトログリセリンは血管拡張→血圧低下（ふらつき・失神）が最大の副作用。投与後は座位か臥位をとらせ転倒を防ぐ。3〜5分で効果なければ再投与（最大3回）し改善しなければ医療機関受診。第113回で出題。'},
+  {id:'q517',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'心臓リハビリテーションの運動強度の目安として適切なのはどれか。',
+   c:['全力で走れる程度','少し息が切れるが笑顔で会話できる程度','心拍数が全く変わらない程度','胸痛が出るまで追い込む程度'],a:1,
+   e:'心リハの適切な強度：「少し息が切れるが会話ができる程度（Borg指数11〜13）」。心拍数120回/分以上・収縮期血圧180mmHg以上・胸痛・めまい・中等度の呼吸困難で即中止。第113回状況設定で出題。'},
+  {id:'q518',unit:'u05',cat:'狭心症・心筋梗塞',
+   q:'スタンフォード分類A型急性大動脈解離の治療方針として適切なのはどれか。',
+   c:['経過観察','緊急手術','運動療法の開始','抗菌薬の投与'],a:1,
+   e:'大動脈解離：A型＝上行大動脈が解離に含まれる→緊急手術が原則（破裂・心タンポナーデのリスク）。B型＝上行大動脈を含まない→薬物療法（降圧・安静）。手術前は厳重な血圧管理と絶対安静。第114回で出題。'},
+
+];
+
+function renderStudy(){
+  const tabs = document.getElementById('study-stabs');
+  const content = document.getElementById('study-content');
+  if(tabs.innerHTML===''){
+    STUDY_SECTIONS.forEach((s,i)=>{
+      const btn = document.createElement('button');
+      btn.className = 'stab' + (i===0?' sa':'');
+      btn.textContent = s.label;
+      btn.onclick = ()=>{
+        document.querySelectorAll('.stab').forEach(b=>b.classList.remove('sa'));
+        btn.classList.add('sa');
+        content.innerHTML = s.content;
+      };
+      tabs.appendChild(btn);
+    });
+  }
+  if(STUDY_SECTIONS.length>0 && content.innerHTML===''){
+    content.innerHTML = STUDY_SECTIONS[0].content;
+  }
+}
+
+
+// ═══════════════ 図データ ═══════════════
+const FIGS = {
+  shinzo: {
+    title: '心臓の解剖図（4部屋と血液の流れ）',
+    svg: `<svg width="100%" viewBox="0 0 680 530" role="img"><title>心臓の解剖図</title><desc>心臓の4部屋と体循環・肺循環の血液の流れ</desc><defs><marker id="fab" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#C0392B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><marker id="fvb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#1A6FB5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><rect x="180" y="120" width="320" height="320" rx="20" fill="#F5F5F0" stroke="#AAAAAA" stroke-width="1.5"/><text font-family="sans-serif" font-size="13" x="340" y="113" text-anchor="middle" fill="#555555">心臓</text><line x1="340" y1="125" x2="340" y2="435" stroke="#888888" stroke-width="2"/><line x1="185" y1="282" x2="335" y2="282" stroke="#888888" stroke-width="1" stroke-dasharray="4 3"/><line x1="345" y1="282" x2="495" y2="282" stroke="#888888" stroke-width="1" stroke-dasharray="4 3"/><rect x="190" y="128" width="142" height="146" rx="10" fill="#D6EAF8" stroke="#1A6FB5" stroke-width="1.5"/><text font-family="sans-serif" font-weight="bold" font-size="16" x="261" y="186" text-anchor="middle" fill="#0D47A1">右心房</text><text font-family="sans-serif" font-size="13" x="261" y="208" text-anchor="middle" fill="#1A5276">静脈血を受け取る</text><text font-family="sans-serif" font-size="12" x="261" y="226" text-anchor="middle" fill="#2471A3">上・下大静脈から</text><rect x="190" y="296" width="142" height="136" rx="10" fill="#EBF5FB" stroke="#1A6FB5" stroke-width="1.5"/><text font-family="sans-serif" font-weight="bold" font-size="16" x="261" y="345" text-anchor="middle" fill="#0D47A1">右心室</text><text font-family="sans-serif" font-size="13" x="261" y="367" text-anchor="middle" fill="#1A5276">肺へ送り出す</text><text font-family="sans-serif" font-size="12" x="261" y="385" text-anchor="middle" fill="#2471A3">壁は左より薄い</text><rect x="348" y="128" width="142" height="146" rx="10" fill="#FADBD8" stroke="#C0392B" stroke-width="1.5"/><text font-family="sans-serif" font-weight="bold" font-size="16" x="419" y="186" text-anchor="middle" fill="#7B241C">左心房</text><text font-family="sans-serif" font-size="13" x="419" y="208" text-anchor="middle" fill="#922B21">動脈血を受け取る</text><text font-family="sans-serif" font-size="12" x="419" y="226" text-anchor="middle" fill="#A93226">肺静脈から</text><rect x="348" y="296" width="142" height="136" rx="10" fill="#F5B7B1" stroke="#C0392B" stroke-width="2.5"/><text font-family="sans-serif" font-weight="bold" font-size="16" x="419" y="342" text-anchor="middle" fill="#641E16">左心室</text><text font-family="sans-serif" font-size="13" x="419" y="364" text-anchor="middle" fill="#7B241C">全身へ送り出す</text><text font-family="sans-serif" font-size="13" x="419" y="382" text-anchor="middle" fill="#922B21">壁が最も厚い ★</text><rect x="210" y="272" width="82" height="22" rx="4" fill="#FFFFFF" stroke="#888888" stroke-width="0.8"/><text font-family="sans-serif" font-weight="bold" font-size="12" x="251" y="287" text-anchor="middle" fill="#333333">▼ 三尖弁</text><rect x="368" y="272" width="82" height="22" rx="4" fill="#FFFFFF" stroke="#888888" stroke-width="0.8"/><text font-family="sans-serif" font-weight="bold" font-size="12" x="409" y="287" text-anchor="middle" fill="#333333">▼ 僧帽弁</text><rect x="252" y="22" width="116" height="52" rx="10" fill="#D5F5E3" stroke="#1E8449" stroke-width="2"/><text font-family="sans-serif" font-weight="bold" font-size="16" x="310" y="43" text-anchor="middle" fill="#1E8449">肺</text><text font-family="sans-serif" font-size="13" x="310" y="62" text-anchor="middle" fill="#1E6B3A">外呼吸・ガス交換</text><rect x="570" y="228" width="96" height="50" rx="10" fill="#FDEDEC" stroke="#C0392B" stroke-width="1.5"/><text font-family="sans-serif" font-weight="bold" font-size="16" x="618" y="250" text-anchor="middle" fill="#922B21">全身</text><text font-family="sans-serif" font-size="13" x="618" y="268" text-anchor="middle" fill="#C0392B">内呼吸</text><path d="M 82 205 L 187 205" fill="none" stroke="#1A6FB5" stroke-width="2.5" marker-end="url(#fvb)"/><text font-family="sans-serif" font-size="13" x="36" y="194" text-anchor="middle" fill="#1A5276">上大静脈</text><text font-family="sans-serif" font-size="12" x="36" y="210" text-anchor="middle" fill="#1A6FB5">（静脈血）</text><path d="M 82 390 L 120 390 L 120 245 L 187 235" fill="none" stroke="#1A6FB5" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#fvb)"/><text font-family="sans-serif" font-size="13" x="36" y="402" text-anchor="middle" fill="#1A5276">下大静脈</text><path d="M 261 276 L 261 294" fill="none" stroke="#1A6FB5" stroke-width="2.5" marker-end="url(#fvb)"/><path d="M 218 296 L 218 100 L 249 70" fill="none" stroke="#1A6FB5" stroke-width="2.5" marker-end="url(#fvb)"/><text font-family="sans-serif" font-size="13" x="145" y="138" text-anchor="middle" fill="#1A5276">肺動脈</text><text font-family="sans-serif" font-size="12" x="145" y="154" text-anchor="middle" fill="#1A6FB5">（静脈血）</text><path d="M 368 48 L 408 48 L 408 126" fill="none" stroke="#C0392B" stroke-width="2.5" marker-end="url(#fab)"/><text font-family="sans-serif" font-size="13" x="440" y="40" text-anchor="start" fill="#922B21">肺静脈</text><text font-family="sans-serif" font-size="12" x="440" y="56" text-anchor="start" fill="#C0392B">（動脈血）</text><path d="M 419 276 L 419 294" fill="none" stroke="#C0392B" stroke-width="2.5" marker-end="url(#fab)"/><path d="M 492 344 L 548 344 L 548 255 L 568 255" fill="none" stroke="#C0392B" stroke-width="3" marker-end="url(#fab)"/><text font-family="sans-serif" font-size="13" x="522" y="334" text-anchor="middle" fill="#922B21">大動脈</text><text font-family="sans-serif" font-size="12" x="522" y="350" text-anchor="middle" fill="#C0392B">（動脈血）</text><path d="M 568 236 L 540 236 L 540 178 L 120 178 L 84 196" fill="none" stroke="#1A6FB5" stroke-width="1.5" stroke-dasharray="6 3" marker-end="url(#fvb)"/><rect x="20" y="456" width="640" height="58" rx="6" fill="#F9F9F7" stroke="#CCCCCC" stroke-width="0.8"/><line x1="36" y1="474" x2="62" y2="474" stroke="#C0392B" stroke-width="3"/><text font-family="sans-serif" font-size="13" x="70" y="478" fill="#7B241C">動脈血（O₂豊富・赤）：肺静脈・左心系・大動脈・全身動脈</text><line x1="36" y1="500" x2="62" y2="500" stroke="#1A6FB5" stroke-width="3"/><text font-family="sans-serif" font-size="13" x="70" y="504" fill="#1A5276">静脈血（CO₂豊富・青）：全身静脈・右心系・肺動脈</text></svg>`
+  },
+  shindenzu: {
+    title: '心電図 5パターン比較',
+    svg: `<svg width="100%" viewBox="0 0 680 620" role="img"><title>心電図5パターン</title><desc>正常・心房細動・心室細動・ST変化・完全房室ブロックの心電図波形</desc><defs><marker id="fda" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><rect x="20" y="20" width="300" height="34" rx="6" fill="#D5F5E3" stroke="#1E8449" stroke-width="1"/><text font-family="sans-serif" font-weight="bold" font-size="13" x="36" y="37" dominant-baseline="central" fill="#1E6B3A">① 正常洞調律</text><text font-family="sans-serif" font-size="11" x="230" y="37" dominant-baseline="central" fill="#1E8449">P波→QRS→T波</text><rect x="20" y="60" width="300" height="110" rx="4" fill="#FAFAFA" stroke="#CCCCCC" stroke-width="0.8"/><line x1="30" y1="125" x2="310" y2="125" stroke="#CCCCCC" stroke-width="0.5" stroke-dasharray="2 3"/><polyline fill="none" stroke="#1E8449" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="30,125 55,125 62,118 69,125 74,125 78,108 83,67 88,135 92,125 100,118 108,125 135,125"/><polyline fill="none" stroke="#1E8449" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="135,125 160,125 167,118 174,125 179,125 183,108 188,67 193,135 197,125 205,118 213,125 240,125"/><polyline fill="none" stroke="#1E8449" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="240,125 265,125 272,118 279,125 284,125 288,108 293,67 298,135 302,125 308,125"/><text font-family="sans-serif" font-size="11" x="62" y="112" text-anchor="middle" fill="#1E8449">P</text><text font-family="sans-serif" font-size="11" x="84" y="62" text-anchor="middle" fill="#1E8449">R</text><text font-family="sans-serif" font-size="11" x="101" y="112" text-anchor="middle" fill="#1E8449">T</text><text font-family="sans-serif" font-size="11" x="135" y="168" text-anchor="middle" fill="#1E8449">RR間隔 一定</text><rect x="360" y="20" width="300" height="34" rx="6" fill="#FEF9E7" stroke="#F39C12" stroke-width="1"/><text font-family="sans-serif" font-weight="bold" font-size="13" x="376" y="37" dominant-baseline="central" fill="#7D6608">② 心房細動（AF）</text><text font-family="sans-serif" font-size="11" x="590" y="37" dominant-baseline="central" fill="#B7770D">P波消失</text><rect x="360" y="60" width="300" height="110" rx="4" fill="#FAFAFA" stroke="#CCCCCC" stroke-width="0.8"/><line x1="370" y1="125" x2="650" y2="125" stroke="#CCCCCC" stroke-width="0.5" stroke-dasharray="2 3"/><polyline fill="none" stroke="#F39C12" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="370,125 374,122 377,127 380,121 383,126 386,123 389,128 392,122 395,126 398,123 401,127 404,122 407,126 410,124 413,128 416,121 419,126 422,123 425,127"/><polyline fill="none" stroke="#C0392B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" points="425,124 429,108 433,67 437,137 441,124"/><polyline fill="none" stroke="#F39C12" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="441,124 444,121 447,126 450,122 453,127 456,124 459,121 462,126"/><polyline fill="none" stroke="#C0392B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" points="462,124 466,110 470,70 474,136 478,124"/><polyline fill="none" stroke="#C0392B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" points="478,124 483,117 488,124"/><polyline fill="none" stroke="#F39C12" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="488,124 510,122 513,127 516,122"/><polyline fill="none" stroke="#C0392B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" points="516,124 520,109 524,68 528,136 532,124"/><polyline fill="none" stroke="#F39C12" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="532,124 560,122 563,127 566,122 595,125 620,123 640,126 650,124"/><text font-family="sans-serif" font-size="11" x="505" y="86" text-anchor="middle" fill="#B7770D">P波なし・基線がぎざぎざ・RR不整</text><rect x="20" y="195" width="300" height="34" rx="6" fill="#FDEDEC" stroke="#C0392B" stroke-width="1"/><text font-family="sans-serif" font-weight="bold" font-size="13" x="36" y="212" dominant-baseline="central" fill="#7B241C">③ 心室細動（VF）</text><text font-family="sans-serif" font-size="11" x="240" y="212" dominant-baseline="central" fill="#C0392B">→ AED緊急</text><rect x="20" y="235" width="300" height="110" rx="4" fill="#FAFAFA" stroke="#CCCCCC" stroke-width="0.8"/><line x1="30" y1="295" x2="310" y2="295" stroke="#CCCCCC" stroke-width="0.5" stroke-dasharray="2 3"/><polyline fill="none" stroke="#C0392B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" points="30,295 36,278 42,308 46,265 52,318 57,272 62,304 66,258 71,315 76,280 80,300 84,262 89,312 93,270 97,295 102,255 107,318 112,285 116,268 121,308 125,278 129,300 134,260 139,315 143,275 148,295 152,258 157,310 162,282 166,268 171,305 175,280 180,295 184,262 189,312 193,272 197,295 202,258 207,315 211,280 215,300 220,262 225,308 229,275 234,295 238,260 243,312 247,278 252,300 257,265 261,310 265,282 270,295 274,268 278,305 283,280 287,295 292,262 297,310 302,282 307,295"/><text font-family="sans-serif" font-size="11" x="165" y="258" text-anchor="middle" fill="#922B21">QRS・T波の区別なし・混沌とした波形</text><rect x="360" y="195" width="300" height="34" rx="6" fill="#EAF2FB" stroke="#1A6FB5" stroke-width="1"/><text font-family="sans-serif" font-weight="bold" font-size="13" x="376" y="212" dominant-baseline="central" fill="#1A3A5C">④ ST変化（狭心症 vs 心筋梗塞）</text><rect x="360" y="235" width="300" height="110" rx="4" fill="#FAFAFA" stroke="#CCCCCC" stroke-width="0.8"/><line x1="370" y1="305" x2="650" y2="305" stroke="#CCCCCC" stroke-width="0.5" stroke-dasharray="2 3"/><text font-family="sans-serif" font-size="12" x="430" y="252" text-anchor="middle" fill="#C0392B">狭心症：ST低下</text><polyline fill="none" stroke="#E67E22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="370,305 385,305 390,298 395,305 399,305 402,290 406,258 410,318 413,320 420,316 428,305 445,305"/><line x1="413" y1="316" x2="413" y2="305" stroke="#E67E22" stroke-width="1" stroke-dasharray="2 2"/><text font-family="sans-serif" font-size="11" x="434" y="322" fill="#E67E22">ST低下↓</text><text font-family="sans-serif" font-size="12" x="575" y="252" text-anchor="middle" fill="#922B21">心筋梗塞：ST上昇</text><polyline fill="none" stroke="#C0392B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="500,305 515,305 520,298 525,305 529,305 532,290 536,258 540,318 544,290 552,286 560,295 568,305 585,305"/><line x1="544" y1="286" x2="544" y2="305" stroke="#C0392B" stroke-width="1" stroke-dasharray="2 2"/><text font-family="sans-serif" font-size="11" x="557" y="283" fill="#C0392B">ST上昇↑</text><text font-family="sans-serif" font-size="10" x="535" y="332" text-anchor="middle" fill="#922B21">→ 進行すると異常Q波</text><rect x="20" y="375" width="640" height="34" rx="6" fill="#F3E5F5" stroke="#7B1FA2" stroke-width="1"/><text font-family="sans-serif" font-weight="bold" font-size="13" x="36" y="392" dominant-baseline="central" fill="#4A148C">⑤ 完全房室ブロック：P波とQRS波が独立したリズムで動く</text><rect x="20" y="415" width="640" height="110" rx="4" fill="#FAFAFA" stroke="#CCCCCC" stroke-width="0.8"/><line x1="30" y1="475" x2="650" y2="475" stroke="#CCCCCC" stroke-width="0.5" stroke-dasharray="2 3"/><polyline fill="none" stroke="#7B1FA2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" points="30,475 50,475 55,465 60,475 90,475 95,465 100,475 130,475 135,465 140,475 170,475 175,465 180,475 210,475 215,465 220,475 250,475 255,465 260,475 290,475 295,465 300,475 330,475 335,465 340,475 370,475 375,465 380,475 410,475 415,465 420,475 450,475 455,465 460,475 490,475 495,465 500,475 530,475 535,465 540,475 570,475 575,465 580,475 610,475 615,465 620,475 650,475"/><text font-family="sans-serif" font-size="11" x="38" y="460" fill="#7B1FA2">P波（一定間隔）</text><polyline fill="none" stroke="#C0392B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" points="30,475 70,475 74,460 78,430 82,490 86,475 190,475 194,460 198,430 202,490 206,475 310,475 314,460 318,430 322,490 326,475 450,475 454,460 458,430 462,490 466,475 580,475 584,460 588,430 592,490 596,475 650,475"/><text font-family="sans-serif" font-size="11" x="38" y="510" fill="#C0392B">QRS波（別の遅いリズム） → ペースメーカー適応</text><rect x="20" y="540" width="640" height="58" rx="6" fill="#F9F9F7" stroke="#CCCCCC" stroke-width="0.8"/><text font-family="sans-serif" font-size="12" x="36" y="560" fill="#1E6B3A">● 正常：P→QRS→T 規則的</text><text font-family="sans-serif" font-size="12" x="220" y="560" fill="#B7770D">● 心房細動：P波消失・RR不整 → 脳塞栓症リスク</text><text font-family="sans-serif" font-size="12" x="490" y="560" fill="#922B21">● 心室細動：混沌 → AED</text><text font-family="sans-serif" font-size="12" x="36" y="586" fill="#E67E22">● 狭心症：ST低下</text><text font-family="sans-serif" font-size="12" x="180" y="586" fill="#922B21">● 心筋梗塞：ST上昇（→異常Q波）</text><text font-family="sans-serif" font-size="12" x="420" y="586" fill="#4A148C">● 完全房室ブロック → ペースメーカー</text></svg>`
+  }
+};
+
+function openFigModal(key) {
+  const fig = FIGS[key];
+  if(!fig) return;
+  document.getElementById('fig-modal-title').textContent = fig.title;
+  document.getElementById('fig-modal-body').innerHTML = fig.svg;
+  document.getElementById('fig-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeFigModal() {
+  document.getElementById('fig-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('fig-modal').addEventListener('click', function(e){
+  if(e.target === this) closeFigModal();
+});
+
+
+// ═══════════════ INIT ═══════════════
+renderHome();
+updateReviewBadge();
+</script>
+</body>
+</html>
